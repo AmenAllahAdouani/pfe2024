@@ -3,7 +3,7 @@ import { Progress } from "@/components/ui/progress"
 
 const Appbar = () => {
   return (
-    <div className="bg-gray-300 py-10 m-0">
+    <div className="bg-white py-8">
         <div className="flex justify-center">
             <div className="text-center">
                 <div className="text-black pb-4">
@@ -12,8 +12,8 @@ const Appbar = () => {
                 </div>
             </div>
         </div>
-        <div>
-            <Progress value={20} className='w-full bg-white'/>
+        <div className="mt-4">
+            <Progress value={20} className="w-full bg-gray-200"/>
         </div>
     </div>
   )
