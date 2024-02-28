@@ -7,20 +7,27 @@ import Duration from "./Atoms/Duration";
 import Budget from "./Atoms/Budget";
 import WithWhom from "./Atoms/WithWhom";
 import TravelerType from "./Atoms/TravelerType";
+import Days from "./Organs/Days";
+import { Calendar } from "lucide-react";
 
 
 export default function Home() {
   return (
     <main>
-      {/*<TravelerType></TravelerType>
-      <WithWhom></WithWhom>
-      <Budget></Budget>
-      <Duration></Duration>
-      <Appbar></Appbar>
-      <Navbar></Navbar>
+      
+      
+      {/*
+      <Appbar></Appbar> -
+      <Navbar></Navbar> -
+      <Budget></Budget> -
+      <Duration></Duration> -
+      <TravelerType></TravelerType> -
+      <WithWhom></WithWhom> -
+      <Budget></Budget> -
+      
+      
       <Sidebar></Sidebar>
-      <h1 className="text-4xl">AI Trip Maker</h1>
-      <Button variant="destructive" className="px-10">Delete</Button>*/}
+      <Days></Days>*/}
     </main>
   );
 }

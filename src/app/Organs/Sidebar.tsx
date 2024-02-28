@@ -1,4 +1,11 @@
 import React from 'react';
+import PieChartIcon from '@mui/icons-material/PieChart';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import ArticleIcon from '@mui/icons-material/Article';
+import SettingsIcon from '@mui/icons-material/Settings';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 const Sidebar = () => {
   return (
@@ -12,32 +19,40 @@ const Sidebar = () => {
       </div>
 
       <nav className="mt-4">
-        <a className="flex items-center py-4 px-8 text-gray-400 hover:bg-gray-600 hover:text-amber-400" href="/#">
+        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <PieChartIcon></PieChartIcon>
           <span className="mx-4">Overview</span>
         </a>
-        {/* Repeat for other links */}
-        <a className="flex items-center py-4 px-8 text-gray-400 hover:bg-gray-600 hover:text-amber-400" href="/#">
+
+        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <ConfirmationNumberIcon></ConfirmationNumberIcon>
           <span className="mx-4">My Bookings</span>
         </a>
-        {/* Repeat for other links */}
-        <a className="flex items-center py-4 px-8 text-gray-400 hover:bg-gray-600 hover:text-amber-400" href="/#">
+        
+        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <FactCheckIcon></FactCheckIcon>
           <span className="mx-4">My Wish List</span>
         </a>
-        {/* Repeat for other links */}
-        <a className="flex items-center py-4 px-8 text-gray-400 hover:bg-gray-600 hover:text-amber-400" href="/#">
+        
+        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <Diversity3Icon></Diversity3Icon>
           <span className="mx-4">Community</span>
         </a>
-        {/* Repeat for other links */}
-        <a className="flex items-center py-4 px-8 text-gray-400 hover:bg-gray-600 hover:text-amber-400" href="/#">
+        
+        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <ArticleIcon></ArticleIcon>
           <span className="mx-4">Reviews</span>
         </a>
+
         <div className="border-b border-gray-400 my-4"></div>
-        {/* Repeat for other links */}
-        <a className="flex items-center py-4 px-8 text-gray-400 hover:bg-gray-600 hover:text-amber-400" href="/#">
+        
+        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <SettingsIcon></SettingsIcon>
           <span className="mx-4">Profile Settings</span>
         </a>
-        {/* Repeat for other links */}
-        <a className="flex items-center py-4 px-8 text-gray-400 hover:bg-gray-600 hover:text-amber-400" href="/#">
+        
+        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <EmojiEventsIcon></EmojiEventsIcon>
           <span className="mx-4">Achievements</span>
         </a>
       </nav>

@@ -1,35 +1,61 @@
 "use client"
 
-import React from 'react'
-import { Calendar } from '@/components/ui/calendar'
-import { Popover, PopoverTrigger } from "@/components/ui/popover"
-import { addDays } from "date-fns"
-import { DateRange } from "react-day-picker"
+import React, { useState, useEffect } from 'react';
+import { Calendar } from '@/components/ui/calendar';
+import { Popover, PopoverTrigger } from "@/components/ui/popover";
+import { addDays } from "date-fns";
+import { DateRange } from "react-day-picker";
+import { Button } from "@/components/ui/button";
 
 const Duration = () => {
-    const [date, setDate] = React.useState<DateRange | undefined>({
-        from: new Date(2022, 0, 20),
-        to: addDays(new Date(2022, 0, 20), 20),
-      })
+  const [date, setDate] = useState<DateRange | undefined>({
+    from: new Date(2022, 0, 20),
+    to: addDays(new Date(2022, 0, 20), 20),
+  });
+  const [numberOfMonths, setNumberOfMonths] = useState(2);
+
+  useEffect(() => {
+    const updateNumberOfMonths = () => {
+      const width = window.innerWidth;
+      if (width < 640) { // Adjusting for smaller screens
+        setNumberOfMonths(1);
+      } else {
+        setNumberOfMonths(2); // Ensure there's enough space for two months on larger screens
+      }
+    };
+
+    window.addEventListener('resize', updateNumberOfMonths);
+    updateNumberOfMonths(); // Initialize on mount
+
+    return () => window.removeEventListener('resize', updateNumberOfMonths);
+  }, []);
+
   return (
-    <div className="items-center justify-center pt-5">
+    <div>
+      <div className="flex flex-col items-center justify-center pt-5">
         <h1 className="font-bold text-center text-xl pb-8">When do you want to go?</h1>
-        <div className="flex items-center justify-center bg-white rounded-lg border-slate-300 border-2 w-1/2 mx-auto">
-            <Popover>
-                <PopoverTrigger>
-                    <Calendar
-                        initialFocus
-                        mode="range"
-                        defaultMonth={date?.from}
-                        selected={date}
-                        onSelect={setDate}
-                        numberOfMonths={2}
-                    />
-                </PopoverTrigger>
-            </Popover>
+        <div className="flex items-center justify-center bg-white rounded-lg border-2 border-slate-300 shadow-md mx-4 my-2 md:w-5/6 lg:w-2/3 xl:w-1/2">
+          <Popover>
+            <PopoverTrigger>
+              <div className="w-full"> {/* Adjusting width based on container size */}
+                <Calendar
+                  initialFocus
+                  mode="range"
+                  defaultMonth={date?.from}
+                  selected={date}
+                  onSelect={setDate}
+                  numberOfMonths={numberOfMonths}
+                />
+              </div>
+            </PopoverTrigger>
+          </Popover>
         </div>
+      </div>
+      <div className="flex md:justify-end justify-center p-4 mt-16">
+        <Button className="w-52 mr-20">Next</Button>
+      </div>
     </div>
   )
 }
 
-export default Duration
+export default Duration;
