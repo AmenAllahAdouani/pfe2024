@@ -82,3 +82,33 @@
 .bg-amber{
   background-color:#FFAF20;
 }
+
+.bg-jordan{
+  background-image: url("../assets/jordan.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-tunisia{
+  background-image: url("../assets/byrsa.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-egypt{
+  background-image: url("../assets/cairo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-morroco{
+  background-image: url("../assets/rabat.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-qatar{
+  background-image: url("../assets/qatar.jpg");
+  background-size: cover;
+  background-position: center;
+}
