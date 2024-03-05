@@ -16,7 +16,8 @@ import Hosts from "./Atoms/Hosts";
 export default function Home() {
   return (
     <main>
-      <Days></Days>
+      <Sidebar></Sidebar>
+
       {/*
       <Appbar></Appbar> -
       <Navbar></Navbar> -
@@ -25,10 +26,11 @@ export default function Home() {
       <TravelerType></TravelerType> -
       <WithWhom></WithWhom> -
       <Destinations></Destinations> -
+      <Days></Days> -
 
       <Hosts></Hosts>
       
-      <Sidebar></Sidebar>
+      
       */}
     </main>
   );
