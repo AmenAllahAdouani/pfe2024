@@ -11,12 +11,13 @@ import Days from "./Organs/Days";
 import { Calendar } from "lucide-react";
 import Destinations from "./Atoms/Destinations";
 import Hosts from "./Atoms/Hosts";
+import GeneralInfo from "./Organs/GeneralInfo";
 
 
 export default function Home() {
   return (
     <main>
-      <Sidebar></Sidebar>
+      
 
       {/*
       <Appbar></Appbar> -
@@ -26,10 +27,12 @@ export default function Home() {
       <TravelerType></TravelerType> -
       <WithWhom></WithWhom> -
       <Destinations></Destinations> -
-      <Days></Days> -
+      <GeneralInfo></GeneralInfo> -
 
-      <Hosts></Hosts>
+      <Days></Days>
       
+      <Hosts></Hosts>
+      <Sidebar></Sidebar>
       
       */}
     </main>

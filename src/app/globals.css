@@ -116,3 +116,8 @@
 .bg-trnasparent{
   background-color: transparent;
 }
+
+.text-s {
+  font-size: 11px;
+  line-height: 12px;
+}

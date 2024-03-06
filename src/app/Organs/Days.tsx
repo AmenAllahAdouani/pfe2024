@@ -1,61 +1,59 @@
 import React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableRow from '@mui/material/TableRow';
-import placeImage from '../../assets/place.jpg';
-import Image from 'next/image';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
 
-function createData(
-  fCol: string,
-  sCol: string
-) {
-  return { fCol, sCol};
-}
 
-const rows = [
-  createData('Currency', 'MAD'),
-  createData('Exchange Rate of 1 USD to MAD', 'MAD 9.78'),
-  createData('Timezone', 'GMT+1'),
-  createData('Language', 'Arabic Berber French'),
-  createData('Weather', ' 18.47°C'),
-  createData('Best Way to Get Around', 'Bus Train Taxi'),
-];
 
 
 const Days = () => {
   return (
-    <section className="max-container padding-container flex flex-col gap-20 mx-5 md:mx-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
-  {/* LEFT */}
-  <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
-    <h1 className="font-bold text-3xl pb-1">3 Days trip in Morocco</h1>
-    <p className="text-xs pb-1">Budget: 0 USD - 1100 USD .Outdoor adventures .Historical landmarks .Shopping</p>
-    <div className="max-w-md pb-4"> {/* Adjust the max-width as needed */}
-      <Image src={placeImage} alt="Place"  className="rounded-lg" />
-    </div>
-    <p className="text-xs pb-2">Morocco is a diverse and culturally rich country located in North Africa, with a <br /> fascinating history and stunning landscapes.</p>
-  </div>
-
-  {/* RIGHT */}
-  <div className="relative z-20 flex flex-1 flex-col xl:w-1/2 my-11 flex-wrap gap-5">
-    <h1 className="font-bold text-lg">General Infomation</h1>
-    <TableContainer>
-      <Table className="min-w-full lg:min-w-0">
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.fCol}>
-              <TableCell component="th" scope="row" className="border-none">
-                {row.fCol}
-              </TableCell>
-              <TableCell align="right" className="border-none">{row.sCol}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  </div>
-</section>
+    <div className="flex items-center justify-center h-screen px-4">
+      <Accordion type="single" collapsible className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+        <AccordionItem value="item-1" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 01</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 02</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            Yes. It comes with default styles that matches the other components&apos; aesthetic.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 03</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            Yes. It's animated by default, but you can disable it if you prefer.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-4" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 04</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            Yes. It's animated by default, but you can disable it if you prefer.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div> 
   )
 }
 
