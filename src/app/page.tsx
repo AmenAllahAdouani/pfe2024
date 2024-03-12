@@ -10,14 +10,15 @@ import TravelerType from "./Atoms/TravelerType";
 import Days from "./Organs/Days";
 import { Calendar } from "lucide-react";
 import Destinations from "./Atoms/Destinations";
-import Hosts from "./Atoms/Hosts";
 import GeneralInfo from "./Organs/GeneralInfo";
+import Plans from "./Atoms/Plans";
+
 
 
 export default function Home() {
   return (
     <main>
-      
+      <Plans></Plans>
 
       {/*
       <Appbar></Appbar> -

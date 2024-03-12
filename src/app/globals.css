@@ -121,3 +121,45 @@
   font-size: 11px;
   line-height: 12px;
 }
+
+.text-xxl {
+  font-size: 20px;
+  line-height: 33px;
+  font-weight: 950;
+}
+
+.bg-host-1{
+  background-image: url("../assets/hosts/host1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-host-2{
+  background-image: url("../assets/hosts/host2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-host-3{
+  background-image: url("../assets/hosts/host3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-host-4{
+  background-image: url("../assets/hosts/host4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-host-5{
+  background-image: url("../assets/hosts/host5.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-host-6{
+  background-image: url("../assets/hosts/host6.jpg");
+  background-size: cover;
+  background-position: center;
+}

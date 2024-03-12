@@ -1,13 +1,17 @@
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
-
-
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
 
 const Days = () => {
   return (
-    <div className="flex items-center justify-center h-screen px-4">
-      <Accordion type="single" collapsible className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+    <div className="flex items-center justify-center h-screen px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
+      <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1" className="rounded-xl shadow-md pr-2 mb-4">
           <AccordionTrigger>
             <div className="flex flex-col items-start pl-8">
@@ -16,7 +20,35 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            <Timeline>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+            </Timeline>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2" className="rounded-xl shadow-md pr-2 mb-4">
@@ -27,7 +59,35 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It comes with default styles that matches the other components&apos; aesthetic.
+            <Timeline>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8'}}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+            </Timeline>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3" className="rounded-xl shadow-md pr-2 mb-4">
@@ -38,7 +98,35 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It's animated by default, but you can disable it if you prefer.
+            <Timeline>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+            </Timeline>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4" className="rounded-xl shadow-md pr-2 mb-4">
@@ -49,7 +137,35 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It's animated by default, but you can disable it if you prefer.
+            <Timeline>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                </TimelineSeparator>
+                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+              </TimelineItem>
+            </Timeline>
           </AccordionContent>
         </AccordionItem>
       </Accordion>

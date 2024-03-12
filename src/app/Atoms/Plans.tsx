@@ -1,8 +1,15 @@
 import React from 'react'
+import Days from '../Organs/Days'
+import GeneralInfo from '../Organs/GeneralInfo'
+import Hosts from '../Organs/Hosts'
 
 const Plans = () => {
   return (
-    <div>Plans</div>
+    <div>
+      <GeneralInfo></GeneralInfo>
+      <Days></Days>
+      <Hosts></Hosts>
+    </div>
   )
 }
 

@@ -2,11 +2,13 @@ import React from 'react'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import Appbar from '../Organs/Appbar'
 
 
 const Destinations = () => {
   return (
     <div>
+      <Appbar></Appbar>
       <div className="flex flex-col items-center justify-center pt-5">
         <h1 className="font-bold text-center text-xl py-4 pb-10">Where do you want to go?</h1>
         <div className="w-1/2 mb-20">

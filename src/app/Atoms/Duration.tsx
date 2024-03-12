@@ -6,6 +6,7 @@ import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import { addDays } from "date-fns";
 import { DateRange } from "react-day-picker";
 import { Button } from "@/components/ui/button";
+import Appbar from '../Organs/Appbar';
 
 const Duration = () => {
   const [date, setDate] = useState<DateRange | undefined>({
@@ -32,6 +33,7 @@ const Duration = () => {
 
   return (
     <div>
+      <Appbar></Appbar>
       <div className="flex flex-col items-center justify-center pt-5">
         <h1 className="font-bold text-center text-xl pb-8">When do you want to go?</h1>
         <div className="flex items-center justify-center bg-white rounded-lg border-2 border-slate-300 shadow-md mx-4 my-2 md:w-5/6 lg:w-2/3 xl:w-1/2">
