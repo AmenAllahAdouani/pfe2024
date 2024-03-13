@@ -25,7 +25,7 @@ const rows = [
 
 const GeneralInfo = () => {
   return (
-    <section className="flex flex-col lg:flex-row gap-20 lg:gap-28 mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-36 h-screen pt-36">
+    <section className="flex flex-col lg:flex-row gap-20 lg:gap-28 mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-36 h-screen pt-10">
       {/* LEFT */}
       <div className="flex flex-1 flex-col items-start xl:w-1/2">
         <h1 className="font-bold text-3xl pb-1">3 Days trip in Morocco</h1>
@@ -37,17 +37,17 @@ const GeneralInfo = () => {
       </div>
 
       {/* RIGHT */}
-      <div className="flex flex-1 flex-col xl:w-1/2 my-11 flex-wrap gap-5">
+      <div className="flex flex-1 flex-col xl:w-1/2 mt-8 flex-wrap gap-5">
         <h1 className="font-bold text-lg">General Infomation</h1>
         <TableContainer>
           <Table className="min-w-full lg:min-w-0">
             <TableBody>
               {rows.map((row) => (
                 <TableRow key={row.fCol}>
-                  <TableCell component="th" scope="row" className="border-none">
+                  <TableCell component="th" scope="row" className="border-none text-xs">
                     {row.fCol}
                   </TableCell>
-                  <TableCell align="right" className="border-none">{row.sCol}</TableCell>
+                  <TableCell align="right" className="border-none text-xs">{row.sCol}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

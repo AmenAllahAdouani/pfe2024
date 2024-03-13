@@ -12,14 +12,14 @@ import { Calendar } from "lucide-react";
 import Destinations from "./Atoms/Destinations";
 import GeneralInfo from "./Organs/GeneralInfo";
 import Plans from "./Atoms/Plans";
+import Overview from "./Molecules/Overview";
 
 
 
 export default function Home() {
   return (
     <main>
-      <Plans></Plans>
-
+      <Overview></Overview>
       {/*
       <Appbar></Appbar> -
       <Navbar></Navbar> -
@@ -29,6 +29,7 @@ export default function Home() {
       <WithWhom></WithWhom> -
       <Destinations></Destinations> -
       <GeneralInfo></GeneralInfo> -
+      <Plans></Plans> -
 
       <Days></Days>
       
