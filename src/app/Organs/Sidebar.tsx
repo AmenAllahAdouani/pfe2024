@@ -25,8 +25,8 @@ const Sidebar = () => {
       {/* Toggle button that appears only on smaller screens */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden p-2 text-white z-50 fixed top-0 right-0 m-4" // md:hidden hides the button on medium screens and above
-        style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+        className="md:hidden p-3 text-white z-[100] fixed bottom-4 right-2 rounded-full bg-amber-500 shadow-lg" // Adjusted for visibility
+        style={{ fontSize: '16px' }} // Ensure icon size is adequate; adjust as necessary
       >
         {isSidebarOpen ? <CloseIcon /> : <MenuIcon />}
       </button>

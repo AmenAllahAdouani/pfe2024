@@ -15,7 +15,7 @@ const Hosts = () => {
               <Card className="flex items-center justify-center h-64 w-40 bg-host-1">
                 <CardContent className="flex flex-col aspect-square items-center justify-center p-6 space-y-2">
                   <span className="text-md font-semibold text-gray-200">Hello I am</span>
-                  <h1 className="text-3xl text-gray-200">Adil</h1>
+                  <h1 className="text-xxl text-gray-200">Adil</h1>
                   <span className="font-pacifico font-bold text-xs text-gray-200">The Architect</span>
                   <Button className="bg-transparent border-2 rounded-3xl border-gray-200 text-gray-200 py-1 px-4">Connect</Button>
                 </CardContent>

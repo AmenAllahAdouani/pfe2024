@@ -20,35 +20,39 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <Timeline>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-            </Timeline>
+            <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2" className="rounded-xl shadow-md pr-2 mb-4">
@@ -59,35 +63,39 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <Timeline>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8'}}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-            </Timeline>
+          <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3" className="rounded-xl shadow-md pr-2 mb-4">
@@ -98,35 +106,39 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <Timeline>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-            </Timeline>
+          <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4" className="rounded-xl shadow-md pr-2 mb-4">
@@ -137,35 +149,39 @@ const Days = () => {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <Timeline>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                  <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
-                </TimelineSeparator>
-                <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
-              </TimelineItem>
-            </Timeline>
+          <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>

@@ -6,9 +6,9 @@ import Hosts from '../Organs/Hosts'
 const Plans = () => {
   return (
     <div>
-      <GeneralInfo></GeneralInfo>
-      <Days></Days>
-      <Hosts></Hosts>
+      <GeneralInfo />
+      <Days />
+      <Hosts />
     </div>
   )
 }
