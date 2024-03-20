@@ -43,8 +43,8 @@ const TravelerType = () => {
             </ToggleGroup>
           </div>
         </div>
-        <div className="flex md:justify-end justify-center p-4 mt-16">
-          <Button className="w-52 mr-20">Next</Button>
+        <div className="flex justify-center md:justify-end p-4 mt-16">
+          <Button className="w-52 md:mr-20">Next</Button>
         </div>
       </div>
     </div>

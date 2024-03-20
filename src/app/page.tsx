@@ -19,8 +19,7 @@ import Overview from "./Molecules/Overview";
 export default function Home() {
   return (
     <main>
-      <Days></Days>
-
+      <Destinations></Destinations>
 
       {/*
       <Appbar></Appbar> -

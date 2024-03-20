@@ -10,8 +10,8 @@ const Destinations = () => {
     <div>
       <Appbar></Appbar>
       <div className="flex flex-col items-center justify-center pt-5">
-        <h1 className="font-bold text-center text-xl py-4 pb-10">Where do you want to go?</h1>
-        <div className="w-1/2 mb-20">
+        <h1 className="font-bold text-center text-xl py-4 pb-8">Where do you want to go?</h1>
+        <div className="w-1/2 mb-8">
           <Input placeholder="Search by city or town"/>
         </div>
         <h1 className="font-bold text-center text-xl">Popular destinations</h1>
@@ -25,8 +25,8 @@ const Destinations = () => {
           </ToggleGroup>
         </div>
       </div>
-      <div className="flex md:justify-end justify-center p-4 mt-16">
-        <Button className="w-52 mr-20">Next</Button>
+      <div className="flex justify-center md:justify-end p-4 mt-16">
+        <Button className="w-52 md:mr-20">Next</Button>
       </div>
     </div>
   )
