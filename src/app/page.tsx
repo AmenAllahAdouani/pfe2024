@@ -1,4 +1,7 @@
+"use client"
+
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Navbar from "./Organs/Navbar";
 import Sidebar from "./Organs/Sidebar";
@@ -13,29 +16,32 @@ import Destinations from "./Atoms/Destinations";
 import GeneralInfo from "./Organs/GeneralInfo";
 import Plans from "./Atoms/Plans";
 import Overview from "./Molecules/Overview";
-
+import Loader from "./Atoms/Loader";
 
 
 export default function Home() {
   return (
     <main>
-      <Destinations></Destinations>
+      <Overview></Overview>
 
       {/*
-      <Appbar></Appbar> -
-      <Navbar></Navbar> -
-      <Budget></Budget> -
-      <Duration></Duration> -
-      <TravelerType></TravelerType> -
-      <WithWhom></WithWhom> -
-      <Destinations></Destinations> -
-      <GeneralInfo></GeneralInfo> -
-      <Plans></Plans> -
-      <Overview></Overview> -
 
-      <Days></Days>
-      
-      <Hosts></Hosts>
+      <Router>
+        <Routes>
+          <Route path="/Budget" element={<Budget />} />
+          <Route path="/Loader" element={<Loader />} />
+          <Route path="/Duration" element={<Duration />} />
+          <Route path="/TravelerType" element={<TravelerType />} />
+          <Route path="/WithWhom" element={<WithWhom />} />
+          <Route path="/" element={<Destinations />} />
+          <Route path="/Overview" element={<Overview />} />
+        </Routes>
+      </Router>
+
+
+
+       -
+
       <Sidebar></Sidebar>
       
       */}

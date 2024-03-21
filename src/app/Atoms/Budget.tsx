@@ -6,12 +6,15 @@ import SavingsIcon from '@mui/icons-material/Savings';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import PaidIcon from '@mui/icons-material/Paid';
 import Appbar from '../Organs/Appbar';
+import { useNavigate } from 'react-router-dom';
+
 
 type BudgetOption = 'economy' | 'normal' | 'luxury';
 
 const Budget: React.FC = () => {
   const [selectedValue, setSelectedValue] = useState<BudgetOption | ''>('');
   const [showError, setShowError] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const handleSelection = (value: BudgetOption) => {
     setSelectedValue(value);
@@ -26,6 +29,7 @@ const Budget: React.FC = () => {
     }
     console.log("Selected Value: ", selectedValue);
     setShowError(false);
+    navigate('/Loader');
   };
 
   return (

@@ -7,15 +7,15 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Diversity2Icon from '@mui/icons-material/Diversity2';
 import PersonIcon from '@mui/icons-material/Person';
 import Appbar from '../Organs/Appbar';
+import { useNavigate } from 'react-router-dom';
 
 
 type TravelWithOption = 'family' | 'partner' | 'friends' | 'myself';
 
 const WithWhom: React.FC = () => {
-
   const [selectedValue, setSelectedValue] = useState<TravelWithOption | ''>('');
-
   const [showError, setShowError] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const handleSelection = (value: TravelWithOption) => {
     setSelectedValue(value);
@@ -30,6 +30,7 @@ const WithWhom: React.FC = () => {
     }
     console.log("Selected Value: ", selectedValue);
     setShowError(false);
+    navigate('/TravelerType');
   };
 
   return (

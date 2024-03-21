@@ -25,8 +25,8 @@ const Sidebar = () => {
       {/* Toggle button that appears only on smaller screens */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden p-3 text-white z-[100] fixed bottom-4 right-2 rounded-full bg-amber-500 shadow-lg" // Adjusted for visibility
-        style={{ fontSize: '16px' }} // Ensure icon size is adequate; adjust as necessary
+        className="md:hidden p-3 text-white z-[100] fixed top-4 right-2 rounded-full bg-amber-500 shadow-lg"
+        style={{ fontSize: '16px' }}
       >
         {isSidebarOpen ? <CloseIcon /> : <MenuIcon />}
       </button>
@@ -39,45 +39,45 @@ const Sidebar = () => {
           </div>
         </div>
 
-      <nav className="mt-4">
-        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
-          <PieChartIcon></PieChartIcon>
-          <span className="mx-4">Overview</span>
-        </a>
+        <nav className="mt-4">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+            <PieChartIcon></PieChartIcon>
+            <span className="mx-4">Overview</span>
+          </a>
 
-        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
-          <ConfirmationNumberIcon></ConfirmationNumberIcon>
-          <span className="mx-4">My Bookings</span>
-        </a>
-        
-        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
-          <FactCheckIcon></FactCheckIcon>
-          <span className="mx-4">My Wish List</span>
-        </a>
-        
-        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
-          <Diversity3Icon></Diversity3Icon>
-          <span className="mx-4">Community</span>
-        </a>
-        
-        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
-          <ArticleIcon></ArticleIcon>
-          <span className="mx-4">Reviews</span>
-        </a>
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+            <ConfirmationNumberIcon></ConfirmationNumberIcon>
+            <span className="mx-4">My Bookings</span>
+          </a>
+          
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+            <FactCheckIcon></FactCheckIcon>
+            <span className="mx-4">My Wish List</span>
+          </a>
+          
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+            <Diversity3Icon></Diversity3Icon>
+            <span className="mx-4">Community</span>
+          </a>
+          
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+            <ArticleIcon></ArticleIcon>
+            <span className="mx-4">Reviews</span>
+          </a>
 
-        <div className="border-b border-gray-400 my-4"></div>
-        
-        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
-          <SettingsIcon></SettingsIcon>
-          <span className="mx-4">Profile Settings</span>
-        </a>
-        
-        <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
-          <EmojiEventsIcon></EmojiEventsIcon>
-          <span className="mx-4">Achievements</span>
-        </a>
-      </nav>
-    </div>
+          <div className="border-b border-gray-400 my-4"></div>
+          
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+            <SettingsIcon></SettingsIcon>
+            <span className="mx-4">Profile Settings</span>
+          </a>
+          
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+            <EmojiEventsIcon></EmojiEventsIcon>
+            <span className="mx-4">Achievements</span>
+          </a>
+        </nav>
+      </div>
     </>
   )
 }

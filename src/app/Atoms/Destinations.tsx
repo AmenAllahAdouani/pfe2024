@@ -3,9 +3,16 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Appbar from '../Organs/Appbar'
-
+import { useNavigate } from 'react-router-dom';
 
 const Destinations = () => {
+  
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate('/Duration');
+  };
+
   return (
     <div>
       <Appbar></Appbar>
@@ -26,7 +33,7 @@ const Destinations = () => {
         </div>
       </div>
       <div className="flex justify-center md:justify-end p-4 mt-16">
-        <Button className="w-52 md:mr-20">Next</Button>
+        <Button className="w-52 md:mr-20" onClick={handleSubmit}>Next</Button>
       </div>
     </div>
   )

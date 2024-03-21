@@ -5,9 +5,15 @@ import Appbar from '../Organs/Appbar'
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-
+import { useNavigate } from 'react-router-dom';
 
 const TravelerType = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate('/Budget');
+  };
+
   return (
     <div>
       <Appbar></Appbar>
@@ -44,7 +50,7 @@ const TravelerType = () => {
           </div>
         </div>
         <div className="flex justify-center md:justify-end p-4 mt-16">
-          <Button className="w-52 md:mr-20">Next</Button>
+          <Button className="w-52 md:mr-20" onClick={handleSubmit}>Next</Button>
         </div>
       </div>
     </div>

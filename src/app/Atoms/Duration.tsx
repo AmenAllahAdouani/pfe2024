@@ -7,6 +7,8 @@ import { addDays } from "date-fns";
 import { DateRange } from "react-day-picker";
 import { Button } from "@/components/ui/button";
 import Appbar from '../Organs/Appbar';
+import { useNavigate } from 'react-router-dom';
+
 
 const Duration = () => {
   const [date, setDate] = useState<DateRange | undefined>({
@@ -31,6 +33,12 @@ const Duration = () => {
     return () => window.removeEventListener('resize', updateNumberOfMonths);
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate('/WithWhom');
+  };
+
   return (
     <div>
       <Appbar></Appbar>
@@ -54,7 +62,7 @@ const Duration = () => {
         </div>
       </div>
       <div className="flex justify-center md:justify-end p-4 mt-16">
-        <Button className="w-52 md:mr-20">Next</Button>
+        <Button className="w-52 md:mr-20" onClick={handleSubmit}>Next</Button>
       </div>
     </div>
   )
