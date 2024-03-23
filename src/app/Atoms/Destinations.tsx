@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Appbar from '../Organs/Appbar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { useProgress } from '../Organs/ProgressContext';
 
 type Country = {
   id: string;
@@ -15,6 +15,7 @@ type Country = {
 import menaCountries from './menaCountries.json';
 
 const Destinations: React.FC = () => {
+  const { progressValue, setProgressValue } = useProgress();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
@@ -44,12 +45,13 @@ const Destinations: React.FC = () => {
   };
 
   const handleSubmit = () => {
+    setProgressValue(17);
     navigate('/Duration');
   };
 
   return (
     <div>
-      <Appbar />
+      <Appbar progress={progressValue} />
       <div className="flex flex-col items-center justify-center pt-5">
         <h1 className="font-bold text-center text-xl py-4 pb-8">Where do you want to go?</h1>
         <div className="w-1/2 mb-8 relative">

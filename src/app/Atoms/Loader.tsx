@@ -4,11 +4,14 @@ import React, { useEffect } from 'react';
 import { BallTriangle } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Appbar from '../Organs/Appbar';
+import { useProgress } from '../Organs/ProgressContext';
 
 const Loader = () => {
+  const { progressValue, setProgressValue } = useProgress();
   const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
+    setProgressValue(100);
     const timer = setTimeout(() => {
       navigate('/Overview');
     }, 3000);
@@ -17,7 +20,7 @@ const Loader = () => {
 
   return (
     <div>
-      <Appbar />
+      <Appbar progress={progressValue} />
       <div className="flex justify-center items-center pt-40">
         <BallTriangle
           height={150}

@@ -8,6 +8,7 @@ import Diversity2Icon from '@mui/icons-material/Diversity2';
 import PersonIcon from '@mui/icons-material/Person';
 import Appbar from '../Organs/Appbar';
 import { useNavigate } from 'react-router-dom';
+import { useProgress } from '../Organs/ProgressContext';
 
 
 type TravelWithOption = 'family' | 'partner' | 'friends' | 'myself';
@@ -15,6 +16,7 @@ type TravelWithOption = 'family' | 'partner' | 'friends' | 'myself';
 const WithWhom: React.FC = () => {
   const [selectedValue, setSelectedValue] = useState<TravelWithOption | ''>('');
   const [showError, setShowError] = useState<boolean>(false);
+  const { progressValue, setProgressValue } = useProgress();
   const navigate = useNavigate();
 
   const handleSelection = (value: TravelWithOption) => {
@@ -30,12 +32,13 @@ const WithWhom: React.FC = () => {
     }
     console.log("Selected Value: ", selectedValue);
     setShowError(false);
+    setProgressValue(51);
     navigate('/TravelerType');
   };
 
   return (
     <div>
-      <Appbar />
+      <Appbar progress={progressValue} />
       <div className="flex flex-col items-center justify-center pt-5">
         <h1 className="font-bold text-center text-xl py-4 pb-10">With whom are you traveling?</h1>
         <div className={`w-full sm:w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 mx-auto ${showError ? 'animate-shake' : ''}`}>

@@ -7,6 +7,7 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 import PaidIcon from '@mui/icons-material/Paid';
 import Appbar from '../Organs/Appbar';
 import { useNavigate } from 'react-router-dom';
+import { useProgress } from '../Organs/ProgressContext'
 
 
 type BudgetOption = 'economy' | 'normal' | 'luxury';
@@ -14,6 +15,7 @@ type BudgetOption = 'economy' | 'normal' | 'luxury';
 const Budget: React.FC = () => {
   const [selectedValue, setSelectedValue] = useState<BudgetOption | ''>('');
   const [showError, setShowError] = useState<boolean>(false);
+  const { progressValue, setProgressValue } = useProgress();
   const navigate = useNavigate();
 
   const handleSelection = (value: BudgetOption) => {
@@ -29,12 +31,13 @@ const Budget: React.FC = () => {
     }
     console.log("Selected Value: ", selectedValue);
     setShowError(false);
+    setProgressValue(85);
     navigate('/Loader');
   };
 
   return (
     <div>
-      <Appbar />
+      <Appbar progress={progressValue} />
       <div className="flex flex-col items-center justify-center pt-5">
         <h1 className="font-bold text-center text-xl py-4 pb-10">What is your Budget?</h1>
         <div className={`w-full sm:w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 mx-auto ${showError ? 'animate-shake' : ''}`}>

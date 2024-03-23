@@ -9,17 +9,20 @@ import DownhillSkiingIcon from '@mui/icons-material/DownhillSkiing';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import FortIcon from '@mui/icons-material/Fort';
 import { useNavigate } from 'react-router-dom';
+import { useProgress } from '../Organs/ProgressContext';
 
 const TravelerType = () => {
+  const { progressValue, setProgressValue } = useProgress();
   const navigate = useNavigate();
 
   const handleSubmit = () => {
+    setProgressValue(68);
     navigate('/Budget');
   };
 
   return (
     <div>
-      <Appbar></Appbar>
+      <Appbar progress={progressValue} />
       <div>
         <div className="flex flex-col items-center justify-center pt-5">
           <h1 className="font-bold text-center text-xl py-4 pb-10">What Type of Traveler are you?</h1>
