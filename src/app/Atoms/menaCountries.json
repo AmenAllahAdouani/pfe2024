@@ -1,0 +1,20 @@
+[
+    { "id": "1", "name": "Jordan" },
+    { "id": "2", "name": "Tunisia" },
+    { "id": "3", "name": "Egypt" },
+    { "id": "4", "name": "Morocco" },
+    { "id": "5", "name": "Qatar" },
+    { "id": "6", "name": "Saudi Arabia" },
+    { "id": "7", "name": "Algeria" },
+    { "id": "8", "name": "Bahrain" },
+    { "id": "9", "name": "Lebanon" },
+    { "id": "10", "name": "Oman" },
+    { "id": "11", "name": "Djibouti" },
+    { "id": "12", "name": "Iraq" },
+    { "id": "13", "name": "Kuwait" },
+    { "id": "14", "name": "Libya" },
+    { "id": "15", "name": "Mauritania" },
+    { "id": "16", "name": "Syria" },
+    { "id": "18", "name": "United Arab Emirates" },
+    { "id": "19", "name": "Yemen" }
+  ]

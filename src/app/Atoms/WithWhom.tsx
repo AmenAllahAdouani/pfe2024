@@ -46,10 +46,10 @@ const WithWhom: React.FC = () => {
                 className={`min-w-[150px] min-h-[150px] md:w-auto md:flex-1 p-3 m-2 rounded-lg border text-center flex flex-col justify-center items-center cursor-pointer ${selectedValue === option ? 'border-blue-500 bg-blue-100' : 'border-slate-300'} ${showError && !selectedValue ? 'border-red-500' : ''}`}
                 onClick={() => handleSelection(option as TravelWithOption)}
               >
-                {option === 'family' && <FamilyRestroomIcon className="text-gray-700 w-20 h-20" />}
-                {option === 'partner' && <FavoriteIcon className="text-gray-700 w-20 h-20" />}
-                {option === 'friends' && <Diversity2Icon className="text-gray-700 w-20 h-20" />}
-                {option === 'myself' && <PersonIcon className="text-gray-700 w-20 h-20" />}
+                {option === 'family' && <FamilyRestroomIcon className="text-gray-434343" />}
+                {option === 'partner' && <FavoriteIcon className="text-gray-434343" />}
+                {option === 'friends' && <Diversity2Icon className="text-gray-434343" />}
+                {option === 'myself' && <PersonIcon className="text-gray-434343" />}
                 <h1 className="text-black font-semibold">{option.charAt(0).toUpperCase() + option.slice(1)}</h1>
               </div>
             ))}
