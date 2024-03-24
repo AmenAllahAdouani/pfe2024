@@ -7,7 +7,7 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 import PaidIcon from '@mui/icons-material/Paid';
 import Appbar from '../Organs/Appbar';
 import { useNavigate } from 'react-router-dom';
-import { useProgress } from '../Organs/ProgressContext'
+import { useProgress } from '../Organs/ProgressContext';
 
 
 type BudgetOption = 'economy' | 'normal' | 'luxury';

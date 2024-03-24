@@ -2,13 +2,13 @@
 
 import React, { useEffect } from 'react';
 import { BallTriangle } from 'react-loader-spinner';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import Appbar from '../Organs/Appbar';
 import { useProgress } from '../Organs/ProgressContext';
 
 const Loader = () => {
   const { progressValue, setProgressValue } = useProgress();
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     setProgressValue(100);

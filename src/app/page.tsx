@@ -10,11 +10,18 @@ import Destinations from "./Atoms/Destinations";
 import Overview from "./Molecules/Overview";
 import Loader from "./Atoms/Loader";
 import { ProgressProvider } from './Organs/ProgressContext';
+import AuthLayout from "./_auth/AuthLayout";
+import SignupForm from "./_auth/forms/SignupForm";
+import SigninForm from "./_auth/forms/SigninForm";
 
 
 export default function Home() {
   return (
     <main>
+      <SigninForm></SigninForm>
+
+      {/*
+
       <ProgressProvider>
         <Router>
           <Routes>
@@ -29,24 +36,14 @@ export default function Home() {
         </Router>
       </ProgressProvider>
 
-      {/*
-
-      <Router>
-        <Routes>
-          <Route path="/Budget" element={<Budget />} />
-          <Route path="/Loader" element={<Loader />} />
-          <Route path="/Duration" element={<Duration />} />
-          <Route path="/TravelerType" element={<TravelerType />} />
-          <Route path="/WithWhom" element={<WithWhom />} />
-          <Route path="/" element={<Destinations />} />
-          <Route path="/Overview" element={<Overview />} />
-        </Routes>
-      </Router>
-
 
 
       <Overview></Overview> -
+      <SigninForm></SigninForm>
+      <SignupForm></SignupForm>
+      <AuthLayout></AuthLayout>
 
+      
       <Sidebar></Sidebar>
       
       */}
