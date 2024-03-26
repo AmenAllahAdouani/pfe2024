@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import Image from 'next/image';
+import { auth } from '@/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form';
@@ -24,13 +26,20 @@ const form = useForm<z.infer<typeof SignupValidation>>({
         password: '',
         },
 })
-        
+
+
 // 2. Define a submit handler.
-function onSubmit(values: z.infer<typeof SignupValidation>) {
-    console.log(values)
+function onSubmit(values: z.infer<typeof SignupValidation>, e: any) {
+    console.log(values);
+    e.preventDefault(); 
+    const { email, password } = values; 
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        console.log(userCredential);
+      }).catch((error) => {
+        console.log(error);
+      }); 
 }
 
-const isLoading = false;
 return (
     <Form {...form}>
         <div className="sm:w-420 flex-center flex-col">
@@ -96,11 +105,7 @@ return (
                 />
 
                 <Button type="submit">
-                    {isLoading ? (
-                        <div className="gap-2 items-center">
-                            Loading...
-                        </div>
-                    ) : "Sign up"}
+                    Sign up
                 </Button>
 
                 <p className="mt-2 text-center">

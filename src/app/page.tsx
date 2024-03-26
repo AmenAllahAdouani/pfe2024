@@ -14,12 +14,11 @@ import AuthLayout from "./_auth/AuthLayout";
 import SignupForm from "./_auth/forms/SignupForm";
 import SigninForm from "./_auth/forms/SigninForm";
 
-
 export default function Home() {
   return (
     <main>
       <SigninForm></SigninForm>
-
+     
       {/*
 
       <ProgressProvider>
