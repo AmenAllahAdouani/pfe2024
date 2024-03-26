@@ -180,3 +180,9 @@
 .text-gray-434343 {
   color: #434343;
 }
+
+.bg-custom-image {
+  background-image: url('../assets/auth.jpg');
+  background-size: cover;
+  background-position: center;
+}
