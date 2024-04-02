@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { auth, db } from "@/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+
 
 type UserData = {
   name: string;
@@ -14,22 +15,20 @@ type UserData = {
 };
 
 export const Profile: React.FC = () => {
-  const [userData, setUserData] = useState<UserData>({ name: "", username: "", email: "" });
-  useEffect(() => {
-    const fetchUserData = async () => {
-      if (auth.currentUser) {
-        console.log(auth.currentUser.uid);
-        console.log(auth.currentUser.email);
 
+  const [userData, setUserData] = useState<UserData>({ name: "", username: "", email: "" });
+
+  useEffect(() => {
+    const fetchUserData = async (): Promise<void> => {
+      if (auth.currentUser) {
         const userDocRef = doc(db, "users", auth.currentUser.uid);
         const docSnap = await getDoc(userDocRef);
-        console.log(docSnap.data()?.email)
         if (docSnap.exists()) {
           console.log(auth.currentUser.uid);
           setUserData({
-            name: docSnap.data()?.name || "",
-            username: docSnap.data()?.username || "",
-            email: docSnap.data()?.email || "",
+            name: docSnap.data().name || "",
+            username: docSnap.data().username || "",
+            email: docSnap.data().email || "",
           });
         }
       }
@@ -37,6 +36,20 @@ export const Profile: React.FC = () => {
 
     fetchUserData();
   }, []);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
+
+  const updateUserData = async () => {
+    if (auth.currentUser) {
+      const userDocRef = doc(db, "users", auth.currentUser.uid);
+      await updateDoc(userDocRef, {
+        ...userData,
+      });
+      // Optionally, show a success message or handle errors
+    }
+  };
 
   return (
     <div className="flex items-center justify-center h-screen px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
@@ -54,20 +67,23 @@ export const Profile: React.FC = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
+              {/* Name Input */}
               <div className="space-y-1">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name"  />
+                <Input id="name" name="name" value={userData.name} onChange={handleChange} />
               </div>
+              {/* Username Input */}
               <div className="space-y-1">
                 <Label htmlFor="username">Username</Label>
-                <Input id="username" name="username"  />
+                <Input id="username" name="username" value={userData.username} onChange={handleChange} />
               </div>
+              {/* Email Input */}
               <div className="space-y-1">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email"  />
+                <Input id="email" name="email" value={userData.email} onChange={handleChange} />
               </div>
               <CardFooter>
-                <Button className="bg-amber-500" type="submit">
+                <Button className="bg-amber-500" type="button" onClick={updateUserData}>
                   Save changes
                 </Button>
               </CardFooter>
