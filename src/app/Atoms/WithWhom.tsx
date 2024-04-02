@@ -33,7 +33,23 @@ const WithWhom: React.FC = () => {
     console.log("Selected Value: ", selectedValue);
     setShowError(false);
     setProgressValue(51);
-    navigate('/TravelerType');
+
+    // Add this to send the selection to your backend
+    fetch('http://localhost:4000/travelWith', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ selectedValue }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      navigate('/TravelerType');
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   };
 
   return (

@@ -12,13 +12,33 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
 import Logo from '../../assets/TabaaniLogo.png';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { auth } from '@/firebase';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/');
+      // Optionally, redirect the user to the login page or perform other actions after logout
+    } catch (error) {
+      console.error("Error signing out:", error);
+      // Handle errors (e.g., display a message to the user)
+    }
+  };
+
+  const directTo = () => {
+    navigate('/Settings');
+  }
 
   return (
     <>
@@ -34,12 +54,12 @@ const Sidebar = () => {
       <div className={`transform top-0 left-0 w-64 bg-gray-800 h-full fixed overflow-auto ease-in-out transition-all duration-300 z-30 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
         <div className="flex items-center justify-center mt-4">
           <div className="flex flex-col items-center justify-center">
-            <Image src={Logo} alt="Place" width={100} height={100} layout="fixed" />
+            <Image src={Logo} alt="Place" width={85} height={85} layout="fixed" />
             <span className="text-gray-400 text-2xl font-semibold">My Trip Maker</span>
           </div>
         </div>
 
-        <nav className="mt-4">
+        <nav className="mt-2">
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
             <PieChartIcon></PieChartIcon>
             <span className="mx-4">Overview</span>
@@ -65,9 +85,9 @@ const Sidebar = () => {
             <span className="mx-4">Reviews</span>
           </a>
 
-          <div className="border-b border-gray-400 my-4"></div>
+          <div className="border-b border-gray-400 my-2"></div>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={directTo}>
             <SettingsIcon></SettingsIcon>
             <span className="mx-4">Profile Settings</span>
           </a>
@@ -75,6 +95,11 @@ const Sidebar = () => {
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
             <EmojiEventsIcon></EmojiEventsIcon>
             <span className="mx-4">Achievements</span>
+          </a>
+
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={handleLogout}>
+            <LogoutIcon></LogoutIcon>
+            <span className="mx-4">Logout</span>
           </a>
         </nav>
       </div>

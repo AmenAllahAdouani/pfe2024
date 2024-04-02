@@ -5,16 +5,25 @@ import { z } from 'zod';
 import Image from 'next/image';
 import { auth, provider } from '@/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '@/firebase';
 
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { SignupValidation } from '@/lib/Validation';
 import Logo from '../../../assets/TabaaniLogo.png';
+import { useNavigate } from 'react-router-dom';
+import GoogleIcon from '@mui/icons-material/Google';
 
 
 
 const SignupForm = () => {
+
+const navigate = useNavigate();
+const directTo = () =>{
+    navigate('/');
+}
 
 // 1. Define your form.
 const form = useForm<z.infer<typeof SignupValidation>>({
@@ -31,32 +40,43 @@ const form = useForm<z.infer<typeof SignupValidation>>({
 // 2. Define a submit handler.
 function onSubmit(values: z.infer<typeof SignupValidation>, e: any) {
     console.log(values);
-    e.preventDefault(); 
-    const { email, password } = values; 
-    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
-        console.log(userCredential);
-      }).catch((error) => {
-        console.log(error);
-      }); 
+    e.preventDefault();
+    const { email, password, name, username } = values;
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Upon successful authentication, save user data (except password) to Firestore
+            const user = userCredential.user;
+            addDoc(collection(db, "users"), {
+                uid: user.uid, // Store the user ID for reference
+                name,
+                username,
+                email,
+            }).then(() => {
+                console.log("User data saved to Firestore");
+            }).catch((error) => {
+                console.error("Error saving user data to Firestore:", error);
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 const [value, setValue] = useState<string>('');
-  const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
-  const handleClick = () => {
-    signInWithPopup(auth, provider).then((result) => {
-      const email = result.user.email;
-      if (email) { // Checking if email is not null or undefined
-        setValue(email);
-        localStorage.setItem('email', email);
-      }
+const handleClick = () => {
+    signInWithPopup(auth, googleProvider).then((result) => {
+        const email = result.user.email;
+        if (email) {
+            setValue(email);
+            localStorage.setItem('email', email);
+        }
     }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ...
+        const errorCode = error.code;
+        const errorMessage = error.message;
     });
-  };
+};
 
 return (
     <div className="flex flex-wrap -m-0">
@@ -123,13 +143,16 @@ return (
                         />
 
                         <Button type="submit">
-                            Sign up
+                            <h1 className="font-semibold text-xl">Sign up</h1>
                         </Button>
 
                         <p className="mt-2 text-center">
-                            Already have an account? <a href="#" className="text-amber-500">Log in</a>
+                            Already have an account? <a onClick={directTo} className="text-amber-500">Log in</a>
                         </p>
-                        <Button onClick={handleClick}>Sign In with Google</Button>
+                        <Button onClick={handleClick}>
+                            <GoogleIcon className="text-white w-8 h-8 mr-2"></GoogleIcon>
+                            <h1 className="font-semibold text-xl">Sign Up with Google</h1>
+                        </Button>
                     </form>
                 </div>
             </Form>

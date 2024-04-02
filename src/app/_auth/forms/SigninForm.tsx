@@ -11,8 +11,13 @@ import { Button } from "@/components/ui/button";
 import { SigninValidation } from "../../../lib/Validation/index";
 import Logo from '../../../assets/TabaaniLogo.png';
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import GoogleIcon from '@mui/icons-material/Google';
+import { useNavigate } from 'react-router-dom';
+
 
 const SigninForm = () => {
+
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof SigninValidation>>({
     resolver: zodResolver(SigninValidation),
     defaultValues: {
@@ -21,10 +26,14 @@ const SigninForm = () => {
     },
   });
 
+  const directTo = () =>{
+    navigate('/SignupForm');
+  }
+
   const logIn = form.handleSubmit((values) => {
     const { email, password } = values;
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      console.log(userCredential);
+      navigate('/Settings');
     }).catch((error) => {
       console.log(error);
     });
@@ -90,16 +99,19 @@ const SigninForm = () => {
                   </FormItem>
                 )}
               />
-
-              <Button type="submit">
-                  Log in
+              <a className="text-amber-500 ml-1">Forgot password?</a>
+              <Button type="submit" className="bg-amber-500 text-white">
+                  <h1 className="font-semibold text-xl">Log in</h1>
               </Button>
 
               <p className="text-center mt-2">
                 Don&apos;t have an account?
-                <a href="#" className="text-amber-500 ml-1">Sign in</a>
+                <a onClick={directTo} className="text-amber-500 ml-1">Sign up</a>
               </p>
-              <Button onClick={handleClick}>Sign In with Google</Button>
+              <Button onClick={handleClick} className="bg-amber-500 text-white">
+                <GoogleIcon className="text-white w-8 h-8 mr-2"></GoogleIcon>
+                <h1 className="font-semibold text-xl">Sign In with Google</h1>
+              </Button>
             </form>
           </div>
         </Form>
