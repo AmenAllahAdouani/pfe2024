@@ -20,20 +20,31 @@ const Destinations: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // If the target is not our input or dropdown container, hide the dropdown
       if (!event.composedPath().some((el) => typeof el === 'object' && 'id' in el && (el.id === 'searchInput' || el.id === 'dropdownContainer'))) {
         setIsDropdownVisible(false);
       }
     };
 
-    // Add when the component mounts
     document.addEventListener("mousedown", handleClickOutside);
-    // Cleanup on unmount
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (searchQuery && filteredCountries.length > 0) {
+      setSelectedCountry(filteredCountries[0]);
+    } else {
+      setSelectedCountry(null);
+    }
+  }, [searchQuery, filteredCountries]);
+
+  useEffect(() => {
+    setErrorMessage('');
+  }, [selectedCountry]);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -45,6 +56,18 @@ const Destinations: React.FC = () => {
   };
 
   const handleSubmit = () => {
+    if (!selectedCountry) {
+      setSearchQuery('');
+      setFilteredCountries([]);
+      setIsDropdownVisible(false);
+      document.getElementById('searchInput')?.classList.add('animate-shake');
+      setTimeout(() => {
+        document.getElementById('searchInput')?.classList.remove('animate-shake');
+      }, 820);
+      setErrorMessage('Please select a country.');
+      return;
+    }
+
     setProgressValue(17);
     navigate('/Duration');
   };
@@ -56,12 +79,13 @@ const Destinations: React.FC = () => {
         <h1 className="font-bold text-center text-xl py-4 pb-8">Where do you want to go?</h1>
         <div className="w-1/2 mb-8 relative">
           <Input
-            id="searchInput" // Added ID for detection
+            id="searchInput"
             placeholder="Search by city or town"
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
             onFocus={() => setIsDropdownVisible(true)}
           />
+          <p className='text-red-500 mt-2 text-center' >{errorMessage}</p>
           {isDropdownVisible && (
             <div id="dropdownContainer" className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto">
               {filteredCountries.map((country) => (
@@ -91,4 +115,3 @@ const Destinations: React.FC = () => {
 }
 
 export default Destinations
-
