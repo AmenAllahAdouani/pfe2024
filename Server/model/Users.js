@@ -15,5 +15,5 @@ const UsersSchema = new mongoose.Schema({
     Budget: String
 })
 
-const UsersModel = mongoose.model('users', UsersSchema)
+const UsersModel = mongoose.model('Users', UsersSchema)
 module.exports = UsersModel
