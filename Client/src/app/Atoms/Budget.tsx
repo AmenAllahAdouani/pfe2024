@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Button } from '@/components/ui/button';
 import SavingsIcon from '@mui/icons-material/Savings';
 import DiamondIcon from '@mui/icons-material/Diamond';
@@ -8,7 +9,6 @@ import PaidIcon from '@mui/icons-material/Paid';
 import Appbar from '../Organs/Appbar';
 import { useNavigate } from 'react-router-dom';
 import { useProgress } from '../Organs/ProgressContext';
-
 
 type BudgetOption = 'economy' | 'normal' | 'luxury';
 
@@ -23,16 +23,25 @@ const Budget: React.FC = () => {
     if (showError) setShowError(false);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!selectedValue) {
-      setShowError(false);
-      setTimeout(() => setShowError(true), 10);
+      setShowError(true);
       return;
     }
-    console.log("Selected Value: ", selectedValue);
-    setShowError(false);
-    setProgressValue(85);
-    navigate('/Loader');
+
+    try {
+      // POST the selected budget to your backend
+      const response = await axios.post('http://localhost:3001/api/users', {
+        Budget: selectedValue
+      });
+      console.log("Server Response:", response.data);
+      setShowError(false);
+      setProgressValue(85);
+      navigate('/Loader');
+    } catch (error) {
+      console.error("Failed to save budget:", error);
+      alert('Failed to save your selection. Please try again.');
+    }
   };
 
   return (

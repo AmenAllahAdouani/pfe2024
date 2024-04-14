@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Button } from '@/components/ui/button';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -9,7 +10,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import Appbar from '../Organs/Appbar';
 import { useNavigate } from 'react-router-dom';
 import { useProgress } from '../Organs/ProgressContext';
-
 
 type TravelWithOption = 'family' | 'partner' | 'friends' | 'myself';
 
@@ -21,19 +21,29 @@ const WithWhom: React.FC = () => {
 
   const handleSelection = (value: TravelWithOption) => {
     setSelectedValue(value);
-    if (showError) setShowError(false); 
+    if (showError) setShowError(false);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!selectedValue) {
       setShowError(false);
       setTimeout(() => setShowError(true), 10);
       return;
     }
-    console.log("Selected Value: ", selectedValue);
-    setShowError(false);
-    setProgressValue(51);
-    navigate('/TravelerType');
+
+    try {
+      // POST the selected companion to your backend
+      const response = await axios.post('http://localhost:3001/api/users', {
+        withWhom: selectedValue
+      });
+      console.log("Server Response:", response.data);
+      setShowError(false);
+      setProgressValue(51);
+      navigate('/TravelerType');
+    } catch (error) {
+      console.error("Failed to save selection:", error);
+      alert('Failed to save your selection. Please try again.');
+    }
   };
 
   return (

@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { auth, db } from "@/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { updatePassword, User, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth";
 
 
 type UserData = {
@@ -17,11 +18,13 @@ type UserData = {
 export const Profile: React.FC = () => {
 
   const [userData, setUserData] = useState<UserData>({ name: "", username: "", email: "" });
+  const [currentPassword, setCurrentPassword] = useState<string>("");
+  const [newPassword, setNewPassword] = useState<string>("");
 
   useEffect(() => {
     const fetchUserData = async (): Promise<void> => {
       if (auth.currentUser) {
-        const userDocRef = doc(db, "users", auth.currentUser.uid);
+        const userDocRef = doc(db, "users", "PXVgb2XMaiU3qYfZ0Cue");
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           console.log(auth.currentUser.uid);
@@ -43,11 +46,44 @@ export const Profile: React.FC = () => {
 
   const updateUserData = async () => {
     if (auth.currentUser) {
-      const userDocRef = doc(db, "users", auth.currentUser.uid);
+      const userDocRef = doc(db, "users", "PXVgb2XMaiU3qYfZ0Cue");
       await updateDoc(userDocRef, {
         ...userData,
       });
-      // Optionally, show a success message or handle errors
+    }
+  };
+
+  const reauthenticate = async (currentPassword: string) => {
+    if (!auth.currentUser || !auth.currentUser.email) return false;
+    
+    const credential = EmailAuthProvider.credential(auth.currentUser.email, currentPassword);
+    try {
+      await reauthenticateWithCredential(auth.currentUser, credential);
+      return true;
+    } catch (error) {
+      console.error("Error during reauthentication:", error);
+      return false;
+    }
+  };
+
+  const handlePasswordSave = async () => {
+    if (!auth.currentUser || !newPassword) {
+      alert("No user is currently logged in or new password is not provided.");
+      return;
+    }
+
+    const reauthenticated = await reauthenticate(currentPassword);
+    if (!reauthenticated) {
+      alert("Reauthentication failed. Please check your current password.");
+      return;
+    }
+
+    try {
+      await updatePassword(auth.currentUser as User, newPassword);
+      alert("Password updated successfully! Please log in again.");
+    } catch (error) {
+      console.error("Error updating password:", error);
+      alert("Failed to update password. You might need to re-login if you haven't done so recently.");
     }
   };
 

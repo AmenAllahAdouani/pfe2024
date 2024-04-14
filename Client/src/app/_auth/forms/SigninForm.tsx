@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from 'next/image';
 import { auth, provider } from '@/firebase';
+import PasswordReset from './PasswordReset';
 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -15,7 +16,10 @@ import GoogleIcon from '@mui/icons-material/Google';
 import { useNavigate } from 'react-router-dom';
 
 
+
 const SigninForm = () => {
+
+  const [showReset, setShowReset] = useState(false);
 
   const navigate = useNavigate();
   const form = useForm<z.infer<typeof SigninValidation>>({
@@ -99,7 +103,8 @@ const SigninForm = () => {
                   </FormItem>
                 )}
               />
-              <a className="text-amber-500 ml-1">Forgot password?</a>
+              <a className="text-amber-500 ml-1" onClick={() => setShowReset(true)}>Forgot password?</a>
+              {showReset && <PasswordReset onClose={() => setShowReset(false)} />}
               <Button type="submit" className="bg-amber-500 text-white">
                   <h1 className="font-semibold text-xl">Log in</h1>
               </Button>

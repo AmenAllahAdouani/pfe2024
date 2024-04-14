@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const UsersModel = require('../model/Users'); // Assuming your model file is in the same directory
+const UsersModel = require('../model/Users');
 
 // Define a route to handle POST requests to create a new user
 router.post('/users', async (req, res) => {

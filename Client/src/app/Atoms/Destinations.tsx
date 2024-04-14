@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Appbar from '../Organs/Appbar';
 import { Button } from '@/components/ui/button';
@@ -55,7 +56,7 @@ const Destinations: React.FC = () => {
     setIsDropdownVisible(true);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!selectedCountry) {
       setSearchQuery('');
       setFilteredCountries([]);
@@ -68,8 +69,17 @@ const Destinations: React.FC = () => {
       return;
     }
 
+    try {
+      // Assuming the backend expects a POST request at this endpoint
+      const response = await axios.post('http://localhost:3001/api/users', {
+        destination: selectedCountry.name
+      });
     setProgressValue(17);
     navigate('/Duration');
+  } catch (error) {
+    console.error('Failed to save destination:', error);
+    setErrorMessage('Failed to save the destination. Please try again.');
+  }
   };
 
   return (
@@ -114,4 +124,5 @@ const Destinations: React.FC = () => {
   )
 }
 
-export default Destinations
+export default Destinations;
+
