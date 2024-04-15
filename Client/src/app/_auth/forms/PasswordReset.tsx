@@ -9,7 +9,6 @@ interface PasswordResetProps {
 const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,7 +17,6 @@ const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
       return;
     }
 
-    setIsLoading(true);
     try {
       await sendPasswordResetEmail(auth, email);
       setMessage('Check your email for the password reset link.');
@@ -27,8 +25,6 @@ const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
       // Logging the error can help understand what went wrong if needed
       console.error("Password Reset Error:", error);
       setMessage('Failed to send password reset email. Please try again later.');
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -47,8 +43,8 @@ const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
           />
         </div>
         <div className="flex justify-evenly my-4">
-          <button type="submit" className="bg-amber-500 text-white rounded px-4 py-2" disabled={isLoading}>
-            {isLoading ? 'Sending...' : 'Send Reset Email'}
+          <button type="submit" className="bg-amber-500 text-white rounded px-4 py-2">
+            Send Reset Email
           </button>
           <button type="button" onClick={onClose} className="text-amber-500 border border-amber-500 rounded px-4 py-2">
             Close
@@ -61,5 +57,4 @@ const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
 }
 
 export default PasswordReset;
-
 

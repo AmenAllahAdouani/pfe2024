@@ -1,6 +1,5 @@
-"use client"
-
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import { DateRange } from "react-day-picker";
@@ -9,20 +8,28 @@ import Appbar from '../Organs/Appbar';
 import { useNavigate } from 'react-router-dom';
 import { ProgressProvider, useProgress } from '../Organs/ProgressContext';
 
-const Duration = () => {
+interface DurationProps {}
+
+interface DurationState {
+  date: DateRange | undefined;
+  numberOfMonths: number;
+  error: string;
+}
+
+const Duration: React.FC<DurationProps> = () => {
   const [date, setDate] = useState<DateRange | undefined>(undefined);
-  const [numberOfMonths, setNumberOfMonths] = useState(2);
-  const [error, setError] = useState('');
+  const [numberOfMonths, setNumberOfMonths] = useState<number>(2);
+  const [error, setError] = useState<string>('');
   const { progressValue, setProgressValue } = useProgress();
   const navigate = useNavigate();
 
   useEffect(() => {
     const updateNumberOfMonths = () => {
       const width = window.innerWidth;
-      if (width < 640) { // Adjusting for smaller screens
+      if (width < 640) {
         setNumberOfMonths(1);
       } else {
-        setNumberOfMonths(2); // Ensure there's enough space for two months on larger screens
+        setNumberOfMonths(2);
       }
     };
 
@@ -32,13 +39,33 @@ const Duration = () => {
     return () => window.removeEventListener('resize', updateNumberOfMonths);
   }, []);
 
-  const handleSubmit = () => {
-    if (!date) {
+  const handleSubmit = async () => {
+    if (!date || !date.from || !date.to) {
       setError('Please select a date range.');
       return;
     }
-    setProgressValue(34);
-    navigate('/WithWhom');
+
+    // Calculate the difference in days
+    const numberOfDays = Math.round((date.to.getTime() - date.from.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+
+    try {
+      // Send data to backend
+      const response = await axios.post('http://localhost:3001/Preferences', {
+        Duration: {
+          from: date.from,
+          to: date.to,
+          numberOfDays: numberOfDays
+        }
+      });
+      console.log('Response:', response.data);
+
+      // Update progress and navigate
+      setProgressValue(34);
+      navigate('/WithWhom');
+    } catch (err) {
+      console.error('Failed to save the duration:', err);
+      setError('Failed to save the dates. Please try again.');
+    }
   };
 
   return (
@@ -61,7 +88,6 @@ const Duration = () => {
                   onSelect={setDate}
                   numberOfMonths={numberOfMonths}
                 />
-                
               </div>
             </PopoverTrigger>
           </Popover>

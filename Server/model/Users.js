@@ -2,7 +2,11 @@ const mongoose = require('mongoose')
 
 const UsersSchema = new mongoose.Schema({
     Destination: String,
-    Duration: String,
+    Duration: {
+        from: Date,
+        to: Date,
+        numberOfDays: Number
+    },
     withWhom: String,
     Interests: {
         foodie: Number,
