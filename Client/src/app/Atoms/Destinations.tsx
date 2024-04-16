@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -37,9 +35,8 @@ const Destinations: React.FC = () => {
 
   useEffect(() => {
     if (searchQuery && filteredCountries.length > 0) {
-      setSelectedCountry(filteredCountries[0]);
-    } else {
-      setSelectedCountry(null);
+      const exactMatch = filteredCountries.find(country => country.name.toLowerCase() === searchQuery.toLowerCase());
+      setSelectedCountry(exactMatch ?? null);
     }
   }, [searchQuery, filteredCountries]);
 
@@ -70,16 +67,15 @@ const Destinations: React.FC = () => {
     }
 
     try {
-      // Assuming the backend expects a POST request at this endpoint
       const response = await axios.post('http://localhost:3001/api/users', {
-        destination: selectedCountry.name
+        Destination: selectedCountry
       });
-    setProgressValue(17);
-    navigate('/Duration');
-  } catch (error) {
-    console.error('Failed to save destination:', error);
-    setErrorMessage('Failed to save the destination. Please try again.');
-  }
+      setProgressValue(17);
+      navigate('/Duration');
+    } catch (error) {
+      console.error('Failed to save destination:', error);
+      setErrorMessage('Failed to save destination. Please try again.');
+    }
   };
 
   return (
@@ -121,8 +117,7 @@ const Destinations: React.FC = () => {
         <Button className="w-52 md:mr-20" onClick={handleSubmit}>Next</Button>
       </div>
     </div>
-  )
+  );
 }
 
 export default Destinations;
-

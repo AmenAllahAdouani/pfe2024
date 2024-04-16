@@ -1,7 +1,10 @@
 const mongoose = require('mongoose')
 
 const UsersSchema = new mongoose.Schema({
-    Destination: String,
+    Destination: {
+        id: String,
+        name: String
+    },
     Duration: {
         from: Date,
         to: Date,
