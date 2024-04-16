@@ -5,7 +5,7 @@ import { z } from 'zod';
 import Image from 'next/image';
 import { auth, provider } from '@/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { collection, addDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { db } from '@/firebase';
 
 import { Button } from '@/components/ui/button';
@@ -46,13 +46,14 @@ function onSubmit(values: z.infer<typeof SignupValidation>, e: any) {
         .then((userCredential) => {
             // Upon successful authentication, save user data (except password) to Firestore
             const user = userCredential.user;
-            addDoc(collection(db, "users"), {
-                uid: user.uid, // Store the user ID for reference
+            const userRef = doc(db, "users", user.uid);  // Create a reference to the document with the UID as the ID
+
+            setDoc(userRef, {
                 name,
                 username,
                 email,
             }).then(() => {
-                console.log("User data saved to Firestore");
+                console.log("User data saved to Firestore with UID as document ID");
             }).catch((error) => {
                 console.error("Error saving user data to Firestore:", error);
             });

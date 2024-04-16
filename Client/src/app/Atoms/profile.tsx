@@ -24,7 +24,7 @@ export const Profile: React.FC = () => {
   useEffect(() => {
     const fetchUserData = async (): Promise<void> => {
       if (auth.currentUser) {
-        const userDocRef = doc(db, "users", "PXVgb2XMaiU3qYfZ0Cue");
+        const userDocRef = doc(db, "users", auth.currentUser.uid);
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           console.log(auth.currentUser.uid);
@@ -46,7 +46,7 @@ export const Profile: React.FC = () => {
 
   const updateUserData = async () => {
     if (auth.currentUser) {
-      const userDocRef = doc(db, "users", "PXVgb2XMaiU3qYfZ0Cue");
+      const userDocRef = doc(db, "users", auth.currentUser.uid);
       await updateDoc(userDocRef, {
         ...userData,
       });
