@@ -37,7 +37,7 @@ const SigninForm = () => {
   const logIn = form.handleSubmit((values) => {
     const { email, password } = values;
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      navigate('/Settings');
+      navigate('/Destination');
     }).catch((error) => {
       console.log(error);
     });
@@ -49,12 +49,11 @@ const SigninForm = () => {
   const handleClick = () => {
     signInWithPopup(auth, provider).then((result) => {
       const email = result.user.email;
-      if (email) { // Checking if email is not null or undefined
+      if (email) { 
         setValue(email);
         localStorage.setItem('email', email);
       }
     }).catch((error) => {
-      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       // ...

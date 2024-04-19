@@ -17,15 +17,24 @@ import Settings from "./Molecules/Settings";
 export default function Home() {
   return (
     <main>
-
-      <Router>
-        <Routes>
-          <Route path="/" element={<SigninForm />} />
-          <Route path="/Settings" element={<Settings />} />
-          <Route path="/SignupForm" element={<SignupForm />} />
-        </Routes>
-      </Router>
+      <ProgressProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<SigninForm />} />
+            <Route path="/SignupForm" element={<SignupForm />} />
+            <Route path="/Destination" element={<Destinations />} />
+            <Route path="/Duration" element={<Duration />} />
+            <Route path="/TravelerType" element={<TravelerType />} />
+            <Route path="/WithWhom" element={<WithWhom />} />
+            <Route path="/Budget" element={<Budget />} />
+            <Route path="/Loader" element={<Loader />} />
+            <Route path="/Overview" element={<Overview />} />
+            <Route path="/Settings" element={<Settings />} />
+          </Routes>
+        </Router>
+      </ProgressProvider>
      
+
       {/*
       <Settings></Settings>
 

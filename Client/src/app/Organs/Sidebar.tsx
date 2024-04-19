@@ -29,10 +29,8 @@ const Sidebar = () => {
     try {
       await signOut(auth);
       navigate('/');
-      // Optionally, redirect the user to the login page or perform other actions after logout
     } catch (error) {
       console.error("Error signing out:", error);
-      // Handle errors (e.g., display a message to the user)
     }
   };
 
@@ -40,9 +38,12 @@ const Sidebar = () => {
     navigate('/Settings');
   }
 
+  const directToOverview = () => {
+    navigate('/Overview');
+  }
+
   return (
     <>
-      {/* Toggle button that appears only on smaller screens */}
       <button
         onClick={toggleSidebar}
         className="md:hidden p-3 text-white z-[100] fixed top-4 right-2 rounded-full bg-amber-500 shadow-lg"
@@ -60,7 +61,7 @@ const Sidebar = () => {
         </div>
 
         <nav className="mt-2">
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={directToOverview}>
             <PieChartIcon></PieChartIcon>
             <span className="mx-4">Overview</span>
           </a>
@@ -107,4 +108,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default Sidebar;
