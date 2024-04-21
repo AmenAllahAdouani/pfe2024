@@ -68,11 +68,33 @@ const googleProvider = new GoogleAuthProvider();
 
 const handleClick = () => {
     signInWithPopup(auth, googleProvider).then((result) => {
-        const email = result.user.email;
-        if (email) {
-            setValue(email);
-            localStorage.setItem('email', email);
-        }
+        const user = result.user;
+        console.log({user})
+        const displayName = user.displayName
+        const userEmail = user.email;
+        const uid = user.uid;
+      
+        const userRef = doc(db, "users", user.uid);  // Create a reference to the document with the UID as the ID
+
+        setDoc(userRef, {
+            name:displayName,
+            username:userEmail,
+            email:userEmail,
+        }).then(() => {
+            localStorage.setItem('auth',"1");
+            let data = JSON.stringify({
+              "uid": uid,
+              "email":userEmail
+            });
+            localStorage.setItem('user',data);
+            navigate('/')
+            console.log("User data saved to Firestore with UID as document ID");
+        }).catch((error) => {
+            console.error("Error saving user data to Firestore:", error);
+        });
+
+
+      
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

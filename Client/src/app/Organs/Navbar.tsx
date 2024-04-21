@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Search from '@mui/icons-material/Search';
-import Sidebar from './Sidebar';
 import { auth, db } from "@/firebase";
 import { doc, getDoc } from "firebase/firestore";
 

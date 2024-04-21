@@ -13,14 +13,17 @@ import { ProgressProvider } from './Organs/ProgressContext';
 import SignupForm from "./_auth/forms/SignupForm";
 import SigninForm from "./_auth/forms/SigninForm";
 import Settings from "./Molecules/Settings";
+import Main from "./Main";
 
 export default function Home() {
   return (
     <main>
       <ProgressProvider>
         <Router>
+
           <Routes>
-            <Route path="/" element={<SigninForm />} />
+          <Route path="/" element={<Main />} />
+            <Route path="/signin" element={<SigninForm />} />
             <Route path="/SignupForm" element={<SignupForm />} />
             <Route path="/Destination" element={<Destinations />} />
             <Route path="/Duration" element={<Duration />} />

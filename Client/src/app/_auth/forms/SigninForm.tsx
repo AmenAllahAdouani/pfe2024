@@ -37,6 +37,13 @@ const SigninForm = () => {
   const logIn = form.handleSubmit((values) => {
     const { email, password } = values;
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      // save to localstorage
+      localStorage.setItem('auth',"1");
+      let data = JSON.stringify({
+        "uid": userCredential.user.uid,
+        "email":userCredential.user.email
+      });
+      localStorage.setItem('user',data);
       navigate('/Destination');
     }).catch((error) => {
       console.log(error);

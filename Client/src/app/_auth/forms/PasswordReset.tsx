@@ -19,6 +19,7 @@ const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
 
     try {
       await sendPasswordResetEmail(auth, email);
+      console.log('Check your email for the password reset link.');
       setMessage('Check your email for the password reset link.');
       setEmail(''); // Optionally clear the email input after successful operation
     } catch (error: any) {

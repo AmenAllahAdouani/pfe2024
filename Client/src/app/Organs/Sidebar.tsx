@@ -28,6 +28,8 @@ const Sidebar = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      localStorage.setItem('auth','0')
+      localStorage.setItem('user',null)
       navigate('/');
     } catch (error) {
       console.error("Error signing out:", error);
