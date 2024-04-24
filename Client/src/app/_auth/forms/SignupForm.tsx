@@ -44,9 +44,8 @@ function onSubmit(values: z.infer<typeof SignupValidation>, e: any) {
     const { email, password, name, username } = values;
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Upon successful authentication, save user data (except password) to Firestore
             const user = userCredential.user;
-            const userRef = doc(db, "users", user.uid);  // Create a reference to the document with the UID as the ID
+            const userRef = doc(db, "users", user.uid); 
 
             setDoc(userRef, {
                 name,
@@ -184,6 +183,6 @@ return (
   )
 }
 
-export default SignupForm
+export default SignupForm;
 
 

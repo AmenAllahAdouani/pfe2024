@@ -10,11 +10,6 @@ app.use(cors())
 
 mongoose.connect("mongodb://localhost:27017/Users");
 
-app.post("/Preferences", (req, res) => {
-    UsersModel.create(req.body)
-    .then(users => res.json(users))
-    .catch(err => res.json(err))
-})
 
 app.use('/api', usersRouter);
 

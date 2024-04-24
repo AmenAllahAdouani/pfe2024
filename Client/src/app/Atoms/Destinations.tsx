@@ -70,6 +70,8 @@ const Destinations: React.FC = () => {
       const response = await axios.post('http://localhost:3001/api/users', {
         Destination: selectedCountry
       });
+      localStorage.setItem('tripID',response.data);
+      console.log(localStorage.getItem('tripID'));
       setProgressValue(17);
       navigate('/Duration');
     } catch (error) {
