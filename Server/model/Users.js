@@ -3,7 +3,11 @@ const mongoose = require('mongoose')
 const UsersSchema = new mongoose.Schema({
     Destination: {
         id: String,
-        name: String
+        name: String,
+        timezone: String,
+        currency: String,
+        language: String,
+        transport: String
     },
     Duration: {
         from: Date,

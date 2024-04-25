@@ -9,6 +9,10 @@ import { useProgress } from '../Organs/ProgressContext';
 type Country = {
   id: string;
   name: string;
+  timezone: string;
+  currency: string;
+  language: string;
+  transport: string;
 };
 
 import menaCountries from './menaCountries.json';
@@ -68,7 +72,13 @@ const Destinations: React.FC = () => {
 
     try {
       const response = await axios.post('http://localhost:3001/api/users', {
-        Destination: selectedCountry
+        Destination: {
+          name: selectedCountry.name,
+          timezone: selectedCountry.timezone,
+          currency: selectedCountry.currency,
+          language: selectedCountry.language,
+          transport: selectedCountry.transport,
+        }
       });
       localStorage.setItem('tripID',response.data);
       console.log(localStorage.getItem('tripID'));

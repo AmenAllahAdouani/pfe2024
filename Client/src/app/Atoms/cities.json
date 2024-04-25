@@ -1,0 +1,407 @@
+[
+      {
+        "country": "United Arab Emirates",
+        "city": "United Arab Emirates, Dubai",
+        "image": "https://example.com/dubai.jpg",
+        "timezone": "Asia/Dubai",
+        "currency": "AED",
+        "language": "Arabic, Englis",
+        "transport": ["Metro", "Bus", "Taxi"]
+      },
+      {
+        "country": "United Arab Emirates",
+        "city": "United Arab Emirates, Abu Dhabi",
+        "image": "https://example.com/abudhabi.jpg",
+        "timezone": "Asia/Dubai",
+        "currency": "AED",
+        "language": "Arabic, English",
+        "transport": ["Bus", "Taxi", "Bicycle"]
+      },
+      {
+        "country": "United Arab Emirates",
+        "city": "United Arab Emirates, Sharjah",
+        "image": "https://example.com/sharjah.jpg",
+        "timezone": "Asia/Dubai",
+        "currency": "AED",
+        "language": "Arabic, English",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Qatar",
+        "city": "Qatar, Doha",
+        "image": "https://example.com/doha.jpg",
+        "timezone": "Asia/Qatar",
+        "currency": "QAR",
+        "language": "Arabic, English",
+        "transport": ["Metro", "Bus", "Taxi"]
+      },
+      {
+        "country": "Qatar",
+        "city": "Qatar, Al Wakrah",
+        "image": "https://example.com/alwakrah.jpg",
+        "timezone": "Asia/Qatar",
+        "currency": "QAR",
+        "language": "Arabic, English",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Qatar",
+        "city": "Qatar, Al Khor",
+        "image": "https://example.com/alkhor.jpg",
+        "timezone": "Asia/Qatar",
+        "currency": "QAR",
+        "language": "Arabic, English",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Tunisia",
+        "city": "Tunisia, Tunis",
+        "image": "https://example.com/tunis.jpg",
+        "timezone": "Africa/Tunis",
+        "currency": "TND",
+        "language": "Arabic, French",
+        "transport": ["Metro", "Bus", "Taxi"]
+      },
+      {
+        "country": "Tunisia",
+        "city": "Tunisia, Sousse",
+        "image": "https://example.com/sousse.jpg",
+        "timezone": "Africa/Tunis",
+        "currency": "TND",
+        "language": "Arabic, French",
+        "transport": ["Metro", "Bus", "Taxi"]
+      },
+      {
+        "country": "Tunisia",
+        "city": "Tunisia, Hammamet",
+        "image": "https://example.com/hammamet.jpg",
+        "timezone": "Africa/Tunis",
+        "currency": "TND",
+        "language": "Arabic, French",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Tunisia",
+        "city": "Tunisia, Monastir",
+        "image": "https://example.com/monastir.jpg",
+        "timezone": "Africa/Tunis",
+        "currency": "TND",
+        "language": "Arabic (official), French",
+        "transport": ["Metro", "Train", "Taxi"]
+      },
+      {
+        "country": "Tunisia",
+        "city": "Tunisia, Djerba",
+        "image": "https://example.com/djerba.jpg",
+        "timezone": "Africa/Tunis",
+        "currency": "TND",
+        "language": "Arabic (official), French",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Tunisia",
+        "city": "Tunisia, Bizerte",
+        "image": "https://example.com/bizerte.jpg",
+        "timezone": "Africa/Tunis",
+        "currency": "TND",
+        "language": "Arabic, French",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Tunisia",
+        "city": "Tunisia, Tozeur",
+        "image": "https://example.com/tozeur.jpg",
+        "timezone": "Africa/Tunis",
+        "currency": "TND",
+        "language": "Arabic, French",
+        "transport": ["Train", "Taxi"]
+      },
+      {
+        "country": "Algeria",
+        "city": "Algeria, Algiers",
+        "image": "https://example.com/algiers.jpg",
+        "timezone": "Africa/Algiers",
+        "currency": "DZD",
+        "language": "Arabic, French",
+        "transport": ["Metro", "Bus", "Taxi"]
+      },
+      {
+        "country": "Algeria",
+        "city": "Algeria, Oran",
+        "image": "https://example.com/oran.jpg",
+        "timezone": "Africa/Algiers",
+        "currency": "DZD",
+        "language": "Arabic, French",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Algeria",
+        "city": "Algeria, Constantine",
+        "image": "https://example.com/constantine.jpg",
+        "timezone": "Africa/Algiers",
+        "currency": "DZD",
+        "language": "Arabic, French",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Morocco",
+        "city": "Morocco, Marrakech",
+        "image": "https://example.com/marrakech.jpg",
+        "timezone": "Africa/Casablanca",
+        "currency": "MAD",
+        "language": "Arabic, Berber, French",
+        "transport": ["Bus", "Taxi", "Bicycle"]
+      },
+      {
+        "country": "Morocco",
+        "city": "Morocco, Casablanca",
+        "image": "https://example.com/casablanca.jpg",
+        "timezone": "Africa/Casablanca",
+        "currency": "MAD",
+        "language": "Arabic, Berber, French",
+        "transport": ["Tramway", "Bus", "Taxi"]
+      },
+      {
+        "country": "Morocco",
+        "city": "Morocco, Fes",
+        "image": "https://example.com/fes.jpg",
+        "timezone": "Africa/Casablanca",
+        "currency": "MAD",
+        "language": "Arabic, Berber, French",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Morocco",
+        "city": "Morocco, Tangier",
+        "image": "https://example.com/tangier.jpg",
+        "timezone": "Africa/Casablanca",
+        "currency": "MAD",
+        "language": "Arabic, Berber, French",
+        "transport": ["Train", "Bus", "Taxi"]
+      },
+      {
+        "country": "Egypt",
+        "city": "Egypt, Cairo",
+        "image": "https://example.com/cairo.jpg",
+        "timezone": "Africa/Cairo",
+        "currency": "EGP",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi", "Mini-bus"]
+      },
+      {
+        "country": "Egypt",
+        "city": "Egypt, Alexandria",
+        "image": "https://example.com/alexandria.jpg",
+        "timezone": "Africa/Cairo",
+        "currency": "Egyptian Pound (EGP)",
+        "language": "Arabic",
+        "transport": ["Tram", "Bus", "Taxi"]
+      },
+      {
+        "country": "Egypt",
+        "city": "Egypt, Luxor",
+        "image": "https://example.com/luxor.jpg",
+        "timezone": "Africa/Cairo",
+        "currency": "EGP",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi", "Bicycle"]
+      },
+      {
+        "country": "Egypt",
+        "city": "Egypt, Aswan",
+        "image": "https://example.com/aswan.jpg",
+        "timezone": "Africa/Cairo",
+        "currency": "EGP",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi", "Felucca"]
+      },
+      {
+        "country": "Turkey",
+        "city": "Turkey, Istanbul",
+        "image": "https://example.com/istanbul.jpg",
+        "timezone": "Europe/Istanbul",
+        "currency": "TRY",
+        "language": "Turkish",
+        "transport": ["Metro", "Ferry", "Bus", "Taxi"]
+      },
+      {
+        "country": "Turkey",
+        "city": "Turkey, Ankara",
+        "image": "https://example.com/ankara.jpg",
+        "timezone": "Europe/Istanbul",
+        "currency": "TRY",
+        "language": "Turkish",
+        "transport": ["Metro", "Bus", "Taxi"]
+      },
+      {
+        "country": "Turkey",
+        "city": "Turkey, Antalya",
+        "image": "https://example.com/antalya.jpg",
+        "timezone": "Europe/Istanbul",
+        "currency": "TRY",
+        "language": "Turkish",
+        "transport": ["Tram", "Bus", "Taxi"]
+      },
+      {
+        "city": "Turkey, Cappadocia",
+        "image": "https://example.com/cappadocia.jpg",
+        "timezone": "Europe/Istanbul",
+        "currency": "TRY",
+        "language": "Turkish",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Saudi Arabia",
+        "city": "Saudi Arabia, Riyadh",
+        "image": "https://example.com/riyadh.jpg",
+        "timezone": "Asia/Riyadh",
+        "currency": "SAR",
+        "language": "Arabic",
+        "transport": ["Metro", "Bus", "Taxi"]
+      },
+      {
+        "country": "Saudi Arabia",
+        "city": "Saudi Arabia, Jeddah",
+        "image": "https://example.com/jeddah.jpg",
+        "timezone": "Asia/Riyadh",
+        "currency": "SAR",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Saudi Arabia",
+        "city": "Saudi Arabia, Mecca",
+        "image": "https://example.com/mecca.jpg",
+        "timezone": "Asia/Riyadh",
+        "currency": "SAR",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Saudi Arabia",
+        "city": "Saudi Arabia, Medina",
+        "image": "https://example.com/medina.jpg",
+        "timezone": "Asia/Riyadh",
+        "currency": "SAR",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Lebanon",
+        "city": "Lebanon, Beirut",
+        "image": "https://example.com/beirut.jpg",
+        "timezone": "Asia/Beirut",
+        "currency": "LBP",
+        "language": "Arabic, French",
+        "transport": ["Bus", "Taxi", "Car Rental"]
+      },
+      {
+        "country": "Lebanon",
+        "city": "Lebanon, Byblos",
+        "image": "https://example.com/byblos.jpg",
+        "timezone": "Asia/Beirut",
+        "currency": "LBP",
+        "language": "Arabic, French",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Libya",
+        "city": "Libya, Tripoli",
+        "image": "https://example.com/tripoli.jpg",
+        "timezone": "Africa/Tripoli",
+        "currency": "LYD",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Libya",
+        "city": "Libya, Benghazi",
+        "image": "https://example.com/benghazi.jpg",
+        "timezone": "Africa/Tripoli",
+        "currency": "Libyan Dinar (LYD)",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Kuwait",
+        "city": "Kuwait, Kuwait City",
+        "image": "https://example.com/kuwaitcity.jpg",
+        "timezone": "Asia/Kuwait",
+        "currency": "KWD",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi", "Car Rental"]
+      },
+      {
+        "country": "Oman",
+        "city": "Oman, Muscat",
+        "image": "https://example.com/muscat.jpg",
+        "timezone": "Asia/Muscat",
+        "currency": "OMR",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi", "Car Rental"]
+      },
+      {
+        "country": "Oman",
+        "city": "Oman, Salalah",
+        "image": "https://example.com/salalah.jpg",
+        "timezone": "Asia/Muscat",
+        "currency": "OMR",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Bahrain",
+        "city": "Bahrain, Manama",
+        "image": "https://example.com/manama.jpg",
+        "timezone": "Asia/Bahrain",
+        "currency": "BHD",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Djibouti",
+        "city": "Djibouti, Djibouti City",
+        "image": "https://example.com/djibouticity.jpg",
+        "timezone": "Africa/Djibouti",
+        "currency": "DJF",
+        "language": "French, Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Syria",
+        "city": "Syria, Damascus",
+        "image": "https://example.com/damascus.jpg",
+        "timezone": "Asia/Damascus",
+        "currency": "SYP",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi", "Minibus"]
+      },
+      {
+        "country": "Syria",
+        "city": "Syria, Aleppo",
+        "image": "https://example.com/aleppo.jpg",
+        "timezone": "Asia/Damascus",
+        "currency": "SYP",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Jordan",
+        "city": "Jordan, Amman",
+        "image": "https://example.com/amman.jpg",
+        "timezone": "Asia/Amman",
+        "currency": "JOD",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      },
+      {
+        "country": "Jordan",
+        "city": "Jordan, Petra",
+        "image": "https://example.com/petra.jpg",
+        "timezone": "Asia/Amman",
+        "currency": "JOD",
+        "language": "Arabic",
+        "transport": ["Bus", "Taxi"]
+      }
+]
+  
