@@ -20,10 +20,11 @@ import Welcome from "./Molecules/Welcome";
 export default function Home() {
   return (
     <main>
-
-      <Welcome />
+      
+      
 
       {/*
+      <Welcome />
       <Reviews />
       <Settings></Settings>
 
