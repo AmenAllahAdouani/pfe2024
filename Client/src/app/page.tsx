@@ -16,12 +16,13 @@ import Settings from "./Molecules/Settings";
 import Main from "./Main";
 import Reviews from "./Molecules/Reviews";
 import Welcome from "./Molecules/Welcome";
+import CommunityTrips from "./Molecules/CommunityTrips";
 
 export default function Home() {
   return (
     <main>
       
-      
+      <CommunityTrips />
 
       {/*
       <Welcome />
