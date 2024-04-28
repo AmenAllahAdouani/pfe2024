@@ -16,6 +16,7 @@ static async createUser(req, res) {
         res.status(400).json({ message: error.message });
     }
 }
+
 static async updateUser(req, res) {
     const { id } = req.params;
     try {
@@ -27,7 +28,6 @@ static async updateUser(req, res) {
             return res.status(404).json({ message: "User not found" });
         }
 
-        // Directly return the updated user data
         res.status(200).json(updatedUser);
     } catch (error) {
         console.error('Error updating user:', error);
