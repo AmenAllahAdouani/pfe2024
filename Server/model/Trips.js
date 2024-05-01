@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const UsersSchema = new mongoose.Schema({
+const TripsSchema = new mongoose.Schema({
     Destination: {
         id: String,
         name: String,
@@ -26,5 +26,5 @@ const UsersSchema = new mongoose.Schema({
     Budget: String
 })
 
-const UsersModel = mongoose.model('Users', UsersSchema)
-module.exports = UsersModel
+const TripsModel = mongoose.model('Trips', TripsSchema)
+module.exports = TripsModel

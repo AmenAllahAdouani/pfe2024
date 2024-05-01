@@ -17,14 +17,18 @@ import Main from "./Main";
 import Reviews from "./Molecules/Reviews";
 import Welcome from "./Molecules/Welcome";
 import CommunityTrips from "./Molecules/CommunityTrips";
+import Trip from "./Organs/Trip";
 
 export default function Home() {
   return (
     <main>
+      <Trip />
       
-      <CommunityTrips />
+      
+      
 
       {/*
+      <CommunityTrips />
       <Welcome />
       <Reviews />
       <Settings></Settings>
@@ -67,7 +71,7 @@ export default function Home() {
       <ProgressProvider>
         <Router>
           <Routes>
-          <Route path="/" element={<Main />} />
+            <Route path="/" element={<Welcome />} />
             <Route path="/signin" element={<SigninForm />} />
             <Route path="/SignupForm" element={<SignupForm />} />
             <Route path="/Destination" element={<Destinations />} />
@@ -78,6 +82,8 @@ export default function Home() {
             <Route path="/Loader" element={<Loader />} />
             <Route path="/Overview" element={<Overview />} />
             <Route path="/Settings" element={<Settings />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/CommunityTrips" element={<CommunityTrips />} />
           </Routes>
         </Router>
       </ProgressProvider>

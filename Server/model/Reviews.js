@@ -10,4 +10,4 @@ const UsersSchema = new mongoose.Schema({
 })
 
 const ReviewsModel = mongoose.model('Reviews', UsersSchema)
-module.exports = UsersModel
+module.exports = ReviewsModel
