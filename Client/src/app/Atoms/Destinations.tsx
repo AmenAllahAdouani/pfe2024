@@ -71,7 +71,7 @@ const Destinations: React.FC = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3001/api/trips', {
+      const response = await axios.post('http://localhost:3001/api/trips/trips', {
         Destination: {
           name: selectedCountry.name,
           timezone: selectedCountry.timezone,

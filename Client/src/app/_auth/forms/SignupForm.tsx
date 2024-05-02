@@ -23,6 +23,8 @@ import Logo from '../../../assets/TabaaniLogo.png';
 import { useNavigate } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
 import { FirebaseError } from 'firebase/app';
+import axios from 'axios';
+
 
 const SignupForm = () => {   
 
@@ -36,6 +38,19 @@ const SignupForm = () => {
             password: '',
         },
     });
+
+    const subscribeUser = async (email: string, name: string) => {
+        try {
+            await axios.post('http://localhost:3001/api/subscriber/subscribe', {
+                email,
+                name
+            });
+            console.log('Subscription successful');
+        } catch (error) {
+            console.error('Failed to subscribe user:', error);
+        }
+    };
+    
 
     const directTo = () =>{
         navigate('/');
@@ -59,11 +74,15 @@ const SignupForm = () => {
                 username,
                 email,
             });
+
+            // Subscribe the user
+            await subscribeUser(email, name);
+
             console.log("User data saved to Firestore with UID as document ID");
     
             navigate('/');
         } catch (error) {
-            const firebaseError = error as FirebaseError; // Asserting the error type to FirebaseError
+            const firebaseError = error as FirebaseError;
             if (firebaseError && firebaseError.code === "auth/email-already-in-use") {
                 alert("The email address is already in use by another account.");
             } else {

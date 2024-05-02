@@ -51,7 +51,7 @@ const Duration: React.FC<DurationProps> = () => {
     try {
       // Send data to backend
       var tripId=localStorage.getItem('tripID');
-      const response = await axios.patch(`http://localhost:3001/api/update/${tripId}`, {
+      const response = await axios.patch(`http://localhost:3001/api/trips/update/${tripId}`, {
         Duration: {
           from: date.from,
           to: date.to,

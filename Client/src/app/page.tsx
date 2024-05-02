@@ -22,7 +22,13 @@ import Trip from "./Organs/Trip";
 export default function Home() {
   return (
     <main>
-      <Trip />
+      <Router>
+        <Routes>
+          <Route path="/" element={<SigninForm />} />
+          <Route path="/Settings" element={<Settings />} />
+          <Route path="/SignupForm" element={<SignupForm />} />
+        </Routes>
+      </Router>
       
       
       
