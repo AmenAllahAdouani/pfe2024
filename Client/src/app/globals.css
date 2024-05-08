@@ -243,3 +243,26 @@
 
 }
 
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.thankYouMessage {
+  font-size: 72px;
+  color: #FFAF20;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeInScaleUp 1s ease-out forwards;
+}
+
+.h-94{
+  height: 376px;
+}
+

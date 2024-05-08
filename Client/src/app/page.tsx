@@ -14,31 +14,24 @@ import SignupForm from "./_auth/forms/SignupForm";
 import SigninForm from "./_auth/forms/SigninForm";
 import Settings from "./Molecules/Settings";
 import Main from "./Main";
+import Reviews from "./Molecules/Reviews";
+import Welcome from "./Molecules/Welcome";
+import CommunityTrips from "./Molecules/CommunityTrips";
+import Trip from "./Organs/Trip";
+import DestinationDisplay from "./Atoms/test";
 
 export default function Home() {
   return (
     <main>
-      <ProgressProvider>
-        <Router>
-
-          <Routes>
-          {/*<Route path="/" element={<Main />} />*/}
-            <Route path="/" element={<SigninForm />} />
-            <Route path="/SignupForm" element={<SignupForm />} />
-            <Route path="/Destination" element={<Destinations />} />
-            <Route path="/Duration" element={<Duration />} />
-            <Route path="/TravelerType" element={<TravelerType />} />
-            <Route path="/WithWhom" element={<WithWhom />} />
-            <Route path="/Budget" element={<Budget />} />
-            <Route path="/Loader" element={<Loader />} />
-            <Route path="/Overview" element={<Overview />} />
-            <Route path="/Settings" element={<Settings />} />
-          </Routes>
-        </Router>
-      </ProgressProvider>
-     
+      <DestinationDisplay />
+      
+      
+      
 
       {/*
+      <CommunityTrips />
+      <Welcome />
+      <Reviews />
       <Settings></Settings>
 
       <ProgressProvider>
@@ -51,7 +44,6 @@ export default function Home() {
             <Route path="/Budget" element={<Budget />} />
             <Route path="/Loader" element={<Loader />} />
             <Route path="/Overview" element={<Overview />} />
-            
           </Routes>
         </Router>
       </ProgressProvider>
@@ -75,6 +67,27 @@ export default function Home() {
 
       
       <Sidebar></Sidebar>
+
+
+      <ProgressProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/signin" element={<SigninForm />} />
+            <Route path="/SignupForm" element={<SignupForm />} />
+            <Route path="/Destination" element={<Destinations />} />
+            <Route path="/Duration" element={<Duration />} />
+            <Route path="/TravelerType" element={<TravelerType />} />
+            <Route path="/WithWhom" element={<WithWhom />} />
+            <Route path="/Budget" element={<Budget />} />
+            <Route path="/Loader" element={<Loader />} />
+            <Route path="/Overview" element={<Overview />} />
+            <Route path="/Settings" element={<Settings />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/CommunityTrips" element={<CommunityTrips />} />
+          </Routes>
+        </Router>
+      </ProgressProvider>
       
       */}
     </main>

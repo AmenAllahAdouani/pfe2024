@@ -36,14 +36,6 @@ const Sidebar = () => {
     }
   };
 
-  const directTo = () => {
-    navigate('/Settings');
-  }
-
-  const directToOverview = () => {
-    navigate('/Overview');
-  }
-
   return (
     <>
       <button
@@ -63,39 +55,60 @@ const Sidebar = () => {
         </div>
 
         <nav className="mt-2">
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={directToOverview}>
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          e.preventDefault()
+          navigate("/Overview")
+          }}>
             <PieChartIcon></PieChartIcon>
             <span className="mx-4">Overview</span>
           </a>
 
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          e.preventDefault()
+          navigate("/#")
+          }}>
             <ConfirmationNumberIcon></ConfirmationNumberIcon>
             <span className="mx-4">My Bookings</span>
           </a>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          e.preventDefault()
+          navigate("/#")
+          }}>
             <FactCheckIcon></FactCheckIcon>
             <span className="mx-4">My Wish List</span>
           </a>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          e.preventDefault()
+          navigate("/#")
+          }}>
             <Diversity3Icon></Diversity3Icon>
-            <span className="mx-4">Community</span>
+            <span className="mx-4">Community Trips</span>
           </a>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          e.preventDefault()
+          navigate("/reviews")
+          }}>
             <ArticleIcon></ArticleIcon>
             <span className="mx-4">Reviews</span>
           </a>
 
           <div className="border-b border-gray-400 my-2"></div>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={directTo}>
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          e.preventDefault()
+          navigate("/Settings")
+          }}>
             <SettingsIcon></SettingsIcon>
             <span className="mx-4">Profile Settings</span>
           </a>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" href="/#">
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          e.preventDefault()
+          navigate("/#")
+          }}>
             <EmojiEventsIcon></EmojiEventsIcon>
             <span className="mx-4">Achievements</span>
           </a>
