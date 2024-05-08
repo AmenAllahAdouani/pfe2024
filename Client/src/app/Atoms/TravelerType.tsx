@@ -50,8 +50,7 @@ const TravelerType: React.FC = () => {
 
   const handleSubmit = async () => {
     try {
-      var tripId=localStorage.getItem('tripID');
-      const response = await axios.patch(`http://localhost:3001/api/trips/update/${tripId}`, {
+      await axios.post('http://localhost:3001/api/users', {
         Interests: travelerValues
       });
       setProgressValue(68);

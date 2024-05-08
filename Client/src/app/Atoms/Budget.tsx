@@ -30,8 +30,8 @@ const Budget: React.FC = () => {
     }
 
     try {
-      var tripId=localStorage.getItem('tripID');
-      const response = await axios.patch(`http://localhost:3001/api/trips/update/${tripId}`, {
+      // POST the selected budget to your backend
+      const response = await axios.post('http://localhost:3001/api/users', {
         Budget: selectedValue
       });
       console.log("Server Response:", response.data);

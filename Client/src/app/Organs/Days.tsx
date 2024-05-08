@@ -1,111 +1,192 @@
-import React, { useState, ReactNode } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import React from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
-interface AccordionProps {
-  children: ReactNode;
-}
 
-interface AccordionItemProps {
-  children: ReactNode;
-  isOpen: boolean;
-  onClick: () => void;
-}
-
-interface AccordionTriggerProps {
-  children: ReactNode;
-}
-
-interface AccordionContentProps {
-  children: ReactNode;
-  isOpen: boolean;
-}
-
-const Accordion: React.FC<AccordionProps> = ({ children }) => (
-  <div className="w-full">{children}</div>
-);
-
-const AccordionItem: React.FC<AccordionItemProps> = ({ children, isOpen, onClick }) => (
-  <div className={`bg-white rounded-xl shadow-md overflow-hidden ${isOpen ? '' : 'mb-4'}`} onClick={onClick}>
-    {children}
-  </div>
-);
-
-const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ children }) => (
-  <div className="flex justify-between items-center p-8 cursor-pointer hover:bg-gray-100 focus:bg-gray-100">
-    {children}
-    <span className="text-gray-400">
-      <KeyboardArrowDownIcon />
-    </span>
-  </div>
-);
-
-const AccordionContent: React.FC<AccordionContentProps> = ({ children, isOpen }) => (
-  isOpen ? <div className="p-8">{children}</div> : null
-);
-
-const DayPlanAccordion: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const handleClick = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const accordionItems = [1, 2, 3].map((item, index) => (
-    <AccordionItem 
-      key={index} 
-      isOpen={openIndex === index} 
-      onClick={() => handleClick(index)}
-    >
-      <AccordionTrigger>
-        <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 0{item}</h1>
-        <p className="text-sm text-gray-800">Check out the day plan below to see what you'll get up to. Feel free to personalize this offer.</p>
-      </AccordionTrigger>
-      <AccordionContent isOpen={openIndex === index}>
-        <ol className="border-s border-gray-200 pl-4 space-y-6">
-          <li>
-            <div className="flex items-center">
-              <span className="flex-shrink-0 w-3 h-3 bg-amber-500 rounded-full mt-1 mr-3"></span>
-              <div>
-                <time className="block text-sm font-normal leading-none text-gray-900">09:00 AM - Meeting point</time>
-                <h3 className="mt-1 text-lg font-semibold">Main Conference Room</h3>
-                <p className="mt-1 text-base font-normal text-gray-500">We will start the day with a brief introduction and overview of the day's activities.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="flex items-center">
-              <span className="flex-shrink-0 w-3 h-3 bg-amber-500 rounded-full mt-1 mr-3"></span>
-              <div>
-                <time className="block text-sm font-normal leading-none text-gray-900">12:00 AM - Meeting point</time>
-                <h3 className="mt-1 text-lg font-semibold">Main Conference Room</h3>
-                <p className="mt-1 text-base font-normal text-gray-500">We will start the day with a brief introduction and overview of the day's activities.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="flex items-center">
-              <span className="flex-shrink-0 w-3 h-3 bg-amber-500 rounded-full mt-1 mr-3"></span>
-              <div>
-                <time className="block text-sm font-normal leading-none text-gray-900">16:00 AM - Meeting point</time>
-                <h3 className="mt-1 text-lg font-semibold">Main Conference Room</h3>
-                <p className="mt-1 text-base font-normal text-gray-500">We will start the day with a brief introduction and overview of the day's activities.</p>
-              </div>
-            </div>
-          </li>
-        </ol>
-      </AccordionContent>
-    </AccordionItem>
-  ));
-
+const Days = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 my-8">
-      <div className="w-full max-w-4xl mx-auto">
-        <Accordion>
-          {accordionItems}
-        </Accordion>
-      </div>
-    </div>
-  );
-};
+    <div className="flex items-center justify-center h-screen px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="item-1" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 01</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 02</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+          <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 03</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+          <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-4" className="rounded-xl shadow-md pr-2 mb-4">
+          <AccordionTrigger>
+            <div className="flex flex-col items-start pl-8">
+              <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 04</h1>
+              <p className="font-bold text-s sm:text-xs pl-1 sm:pl-8 pt-2">Check out the day plan below to see what you'll get up. Feel free to personalize this offer.</p>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+          <div className="flex flex-row">
+              <div className="timeline-container">
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                      <TimelineConnector style={{ backgroundColor: '#fb923c', width: '8px', opacity: '0.8' }}/>
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: '#F59E0B' }} />
+                    </TimelineSeparator>
+                    <TimelineContent><h1 className="font-bold">Meeting point</h1></TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </div>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div> 
+  )
+}
 
-export default DayPlanAccordion;
+export default Days

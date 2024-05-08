@@ -34,5 +34,24 @@ static async updateTrip(req, res) {
         res.status(400).json({ message: error.message });
     }
 }
+
+static async getTrip(req, res) {
+    try {
+        // Retrieve a trip document by ID from the database
+        const trip = await TripsModel.findById(req.params.id);
+
+        if (!trip) {
+            // If no trip is found, send a 404 Not Found response
+            return res.status(404).json({ message: "Trip not found" });
+        }
+
+        // Respond with the retrieved trip
+        res.status(200).json(trip);
+    } catch (error) {
+        // If an error occurs, respond with a 400 Bad Request status and message
+        res.status(400).json({ message: error.message });
+    }
+}
+
 }
 module.exports = Trips;

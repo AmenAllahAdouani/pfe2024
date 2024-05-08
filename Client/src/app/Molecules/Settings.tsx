@@ -7,7 +7,7 @@ import { Profile } from '../Atoms/profile';
 const Settings = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
-      <div className="w-64 flex-shrink-0"> 
+      <div className="w-64 flex-shrink-0">
         <Sidebar />
       </div>
   
