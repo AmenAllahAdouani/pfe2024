@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import placeImage from '../../assets/place.jpg';
-import Image from 'next/image';
 
 import Transport from '@mui/icons-material/DirectionsCar';
 import Exchange from '@mui/icons-material/CurrencyExchange';
@@ -14,6 +12,24 @@ import Language from '@mui/icons-material/GTranslate';
 import Weather from '@mui/icons-material/Thunderstorm';
 import TimeZone from '@mui/icons-material/QueryBuilder';
 import { SvgIconProps } from '@mui/material/SvgIcon';
+import axios from 'axios';
+
+interface Destination {
+  name: string;
+}
+
+interface Trip {
+  _id: string;
+  destination: Destination;
+}
+
+interface UnsplashResponse {
+results: Array<{
+  urls: { small: string };
+  alt_description: string;
+}>;
+}
+
 
 function createData(
   Icon: React.ComponentType<SvgIconProps>,
@@ -27,29 +43,119 @@ function createData(
   };
 }
 
-const rows = [
-  createData(Currency, 'Currency', 'MAD'),
-  createData(Exchange, 'Exchange Rate of 1 USD to MAD', 'MAD 9.78'),
-  createData(TimeZone, 'Timezone', 'GMT+1'),
-  createData(Language, 'Language', 'Arabic Berber French'),
-  createData(Weather, 'Weather', ' 18.47°C'),
-  createData(Transport, 'Best Way to Get Around', 'Bus Train Taxi'),
-];
+
 
 const GeneralInfo = () => {
+
+    const [destinationName, setDestinationName] = useState<string>('');
+    const [destinationCurrency, setDestinationCurrency] = useState<string>('');
+    const [destinationTransport, setDestinationTransport] = useState<string>('');
+    const [destinationLanguage, setDestinationLanguage] = useState<string>('');
+    const [destinationTimezone, setDestinationTimezone] = useState<string>('');
+    const [imageUrl, setImageUrl] = useState<string>('');
+    const [imageAlt, setImageAlt] = useState<string>('');
+    const [numberOfDays, setNumberOfDays] = useState('');
+    const [withWho, setWithWho] = useState<string>('');
+    
+    const key = localStorage.getItem('tripID');
+    useEffect(() => {
+      
+      const fetchTrips = async () => {
+        if(destinationName===''){
+          try {
+            const response = await axios.get(`http://localhost:3001/api/trips/trips/${key}`);
+            setDestinationName(response.data.Destination.name);
+            setDestinationCurrency(response.data.Destination.currency);
+            setDestinationLanguage(response.data.Destination.language);
+            setDestinationTransport(response.data.Destination.transport);
+            setDestinationTimezone(response.data.Destination.timezone);
+            setNumberOfDays(response.data.Duration.numberOfDays);
+            setWithWho(response.data.WithWhom);
+            console.log(response);
+          } catch (error) {
+            console.error('Error fetching trips:', error);
+          }
+        }
+      };
+  
+      fetchTrips();
+    }, []);
+  
+
+    useEffect(() => {
+      const fetchImage = async () => {
+        let vari=(destinationName);
+        const accessKey = "iI2yfYLptzSLsfdk134vS1InKO7_Tp58WixYDSBw45A";
+        const url = `https://api.unsplash.com/search/photos?page=1&query=${vari}&client_id=${accessKey}`;
+        try {
+          const response = await axios.get(url);
+          console.log(response);
+          setImageUrl(response.data.results[0].urls.small);
+        } catch (error) {}
+      }; 
+
+      fetchImage();
+
+    }, [destinationName]);
+
+    const [weather, setWeather] = useState<string>('');
+    useEffect(() => {
+      const fetchWeather = async () => {
+        if (destinationName) {
+          const apiKey = '4448f5856678354b840d625704c46695';
+          const url = `https://api.openweathermap.org/data/2.5/weather?q=${destinationName}&appid=${apiKey}&units=metric`;
+            const response = await axios.get(url);
+            const weatherData = response.data;
+            const formattedWeather = `Temp: ${weatherData.main.temp}°C, ${weatherData.weather[0].main}`;
+            setWeather(formattedWeather);
+        }
+      };
+    
+      fetchWeather();
+    }, [destinationName]);
+
+    const [exchangeRate, setExchangeRate] = useState(null);
+
+    useEffect(() => {
+      const fetchExchangeRate = async () => {
+        if (destinationCurrency) {
+          const apiKey = 'a5234bd990907c68cece1e31';
+          const baseCurrency = 'USD';
+          const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${baseCurrency}/${destinationCurrency}`;
+            const response = await axios.get(url);
+            if (response.data && response.data.conversion_rate) {
+              setExchangeRate(response.data.conversion_rate);
+            } else {
+              throw new Error('Failed to retrieve conversion rate');
+            }
+        }
+      };
+    
+      fetchExchangeRate();
+    }, [destinationCurrency]);
+
+
+    const rows = [
+      createData(Currency, 'Currency', destinationCurrency),
+      createData(Exchange, `Exchange Rate of 1 USD to ${destinationCurrency}`, exchangeRate ? `${exchangeRate} ${destinationCurrency}` : 'N/A'),
+      createData(TimeZone, 'Timezone', destinationTimezone),
+      createData(Language, 'Language', destinationLanguage),
+      createData(Weather, 'Weather', weather),
+      createData(Transport, 'Best Way to Get Around', destinationTransport),
+    ];
+
+
   return (
     <section className="flex flex-col lg:flex-row gap-20 lg:gap-28 mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-36 pt-10">
       <div className="flex flex-1 flex-col items-start xl:w-1/2">
-        <h1 className="font-bold text-3xl pb-1">3 Days trip in Morocco</h1>
-        <p className="text-xs pb-1">Budget: 0 USD - 1100 USD .Outdoor adventures .Historical landmarks .Shopping</p>
-        <div className="max-w-md pb-4">
-          <Image src={placeImage} alt="Place" className="rounded-lg" />
+        <h1 className="font-bold text-2xl pb-1">{numberOfDays + ' Days Trip in ' + destinationName}</h1>
+        <div className="max-w-md pt-2">
+          <img src={imageUrl} alt={imageAlt} className="rounded-lg h-72 w-100" />
         </div>
-        <p className="text-xs pb-2">Morocco is a diverse and culturally rich country located in North Africa, with a fascinating history and stunning landscapes.</p>
       </div>
 
       <div className="flex flex-1 flex-col xl:w-1/2 flex-wrap gap-5">
-        <h1 className="font-bold text-lg">General Information</h1>
+        <h1 className="font-bold text-2xl">General Information</h1>
         <TableContainer>
           <Table className="w-full lg:w-auto"> 
             <TableBody>

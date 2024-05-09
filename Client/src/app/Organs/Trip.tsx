@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Map from '../../assets/rabat.jpg';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Days from './Days';
 
 const Trip = () => {
   return (

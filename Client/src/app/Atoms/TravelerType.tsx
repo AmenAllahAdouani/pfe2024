@@ -33,12 +33,12 @@ const TravelerType: React.FC = () => {
   const navigate = useNavigate();
 
   const [travelerValues, setTravelerValues] = useState<TravelerValues>({
-    foodie: 50,
-    HistoryBuff: 50,
-    StyleIcon: 50,
-    Adventures: 50,
-    ArtLover: 50,
-    NightOwl: 50
+    foodie: 20,
+    HistoryBuff: 20,
+    StyleIcon: 20,
+    Adventures: 20,
+    ArtLover: 20,
+    NightOwl: 20
   });
 
   const handleSliderChange = (type: keyof TravelerValues, value: number[]) => {

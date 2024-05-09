@@ -28,12 +28,13 @@ const DestinationDisplay: React.FC = () => {
       
       const fetchTrips = async () => {
         if(destinationName===''){
-        try {
-          const response = await axios.get(`http://localhost:3001/api/trips/trips/${key}`);
-          setDestinationName(response.data.Destination.name);
-        } catch (error) {
-          console.error('Error fetching trips:', error);
-        }}
+          try {
+            const response = await axios.get(`http://localhost:3001/api/trips/trips/${key}`);
+            setDestinationName(response.data.Destination.name);
+          } catch (error) {
+            console.error('Error fetching trips:', error);
+          }
+        }
       };
   
       fetchTrips();
@@ -42,18 +43,14 @@ const DestinationDisplay: React.FC = () => {
 
     useEffect(() => {
       const fetchImage = async () => {
-        let vari=destinationName;
+        let vari=(destinationName + ' vibes');
         const accessKey = "iI2yfYLptzSLsfdk134vS1InKO7_Tp58WixYDSBw45A";
         const url = `https://api.unsplash.com/search/photos?page=1&query=${vari}&client_id=${accessKey}`;
         try {
           const response = await axios.get(url);
           console.log(response);
-            setImageUrl(response.data.results[0].urls.small);
-        } catch (error) {
-          console.error('Error fetching image from Unsplash:', error);
-          setImageUrl('');
-          setImageAlt('Failed to load image');
-        }
+          setImageUrl(response.data.results[0].urls.small);
+        } catch (error) {}
       }; 
 
       fetchImage();

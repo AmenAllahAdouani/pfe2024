@@ -19,11 +19,24 @@ import Welcome from "./Molecules/Welcome";
 import CommunityTrips from "./Molecules/CommunityTrips";
 import Trip from "./Organs/Trip";
 import DestinationDisplay from "./Atoms/test";
+import GeneralInfo from "./Organs/GeneralInfo";
 
 export default function Home() {
   return (
     <main>
-      <DestinationDisplay />
+      <ProgressProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Destinations />} />
+            <Route path="/Duration" element={<Duration />} />
+            <Route path="/TravelerType" element={<TravelerType />} />
+            <Route path="/WithWhom" element={<WithWhom />} />
+            <Route path="/Budget" element={<Budget />} />
+            <Route path="/Loader" element={<Loader />} />
+            <Route path="/Overview" element={<Overview />} />
+          </Routes>
+        </Router>
+      </ProgressProvider>
       
       
       
