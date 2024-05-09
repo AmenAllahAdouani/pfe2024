@@ -20,6 +20,7 @@ import CommunityTrips from "./Molecules/CommunityTrips";
 import Trip from "./Organs/Trip";
 import DestinationDisplay from "./Atoms/test";
 import GeneralInfo from "./Organs/GeneralInfo";
+import Days from "./Organs/Days";
 
 export default function Home() {
   return (

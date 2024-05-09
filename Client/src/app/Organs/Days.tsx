@@ -1,22 +1,23 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useEffect, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import axios from 'axios';
 
 interface AccordionProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface AccordionItemProps {
-  children: ReactNode;
+  children: React.ReactNode;
   isOpen: boolean;
   onClick: () => void;
 }
 
 interface AccordionTriggerProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface AccordionContentProps {
-  children: ReactNode;
+  children: React.ReactNode;
   isOpen: boolean;
 }
 
@@ -44,20 +45,30 @@ const AccordionContent: React.FC<AccordionContentProps> = ({ children, isOpen })
 );
 
 const DayPlanAccordion: React.FC = () => {
+  const [days, setDays] = useState<number[]>([]);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchTrips = async () => {
+        const key = localStorage.getItem('tripID');
+        const response = await axios.get(`http://localhost:3001/api/trips/trips/${key}`);
+        setDays(Array.from({ length: response.data.Duration.numberOfDays }, (_, i) => i + 1));
+    };
+    fetchTrips();
+  }, []);
 
   const handleClick = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const accordionItems = [1, 2, 3].map((item, index) => (
+  const accordionItems = days.map((day, index) => (
     <AccordionItem 
       key={index} 
       isOpen={openIndex === index} 
       onClick={() => handleClick(index)}
-    >
+    > 
       <AccordionTrigger>
-        <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day 0{item}</h1>
+        <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day {day}</h1>
         <p className="text-sm text-gray-800">Check out the day plan below to see what you'll get up to. Feel free to personalize this offer.</p>
       </AccordionTrigger>
       <AccordionContent isOpen={openIndex === index}>

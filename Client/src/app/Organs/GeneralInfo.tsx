@@ -71,7 +71,6 @@ const GeneralInfo = () => {
             setDestinationTimezone(response.data.Destination.timezone);
             setNumberOfDays(response.data.Duration.numberOfDays);
             setWithWho(response.data.WithWhom);
-            console.log(response);
           } catch (error) {
             console.error('Error fetching trips:', error);
           }
@@ -89,7 +88,6 @@ const GeneralInfo = () => {
         const url = `https://api.unsplash.com/search/photos?page=1&query=${vari}&client_id=${accessKey}`;
         try {
           const response = await axios.get(url);
-          console.log(response);
           setImageUrl(response.data.results[0].urls.small);
         } catch (error) {}
       }; 
