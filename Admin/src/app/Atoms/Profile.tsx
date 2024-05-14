@@ -4,12 +4,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-{/*
 import { auth, db } from "@/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { updatePassword, User, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth";
-*/}
 
 
 type UserData = {
@@ -20,9 +17,7 @@ type UserData = {
 
 export const Profile: React.FC = () => {
 
-  {/*
-
-const [userData, setUserData] = useState<UserData>({ name: "", username: "", email: "" });
+  const [userData, setUserData] = useState<UserData>({ name: "", username: "", email: "" });
   const [currentPassword, setCurrentPassword] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
 
@@ -92,8 +87,6 @@ const [userData, setUserData] = useState<UserData>({ name: "", username: "", ema
     }
   };
 
-*/}
-
   return (
     <div className="flex items-center justify-center h-screen px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
       <Tabs defaultValue="account" className="w-[400px]">
@@ -110,23 +103,20 @@ const [userData, setUserData] = useState<UserData>({ name: "", username: "", ema
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
-              {/* Name Input */}
               <div className="space-y-1">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" name="name" value="Admin" /> {/* {userData.name} onChange={handleChange} */}
+                <Input id="name" name="name" value={userData.name} onChange={handleChange} />
               </div>
-              {/* Username Input */}
               <div className="space-y-1">
                 <Label htmlFor="username">Username</Label>
-                <Input id="username" name="username" value="Admin" /> {/* {userData.username} onChange={handleChange} */}
+                <Input id="username" name="username" value={userData.username} onChange={handleChange} />
               </div>
-              {/* Email Input */}
               <div className="space-y-1">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" value="admin@gmail.com" /> {/* {userData.email} onChange={handleChange} */}
+                <Input id="email" name="email" value={userData.email} onChange={handleChange} />
               </div>
               <CardFooter>
-                <Button className="bg-amber-500" type="button" > {/* onClick={updateUserData} */}
+                <Button className="bg-amber-500" type="button" onClick={updateUserData}>
                   Save changes
                 </Button>
               </CardFooter>

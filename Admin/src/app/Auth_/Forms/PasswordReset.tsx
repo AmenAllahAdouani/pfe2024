@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from '@/firebase';
 
+
 interface PasswordResetProps {
   onClose: () => void;
 }
 
 const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
+
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
@@ -31,16 +33,15 @@ const PasswordReset: React.FC<PasswordResetProps> = ({ onClose }) => {
 
   return (
     <div className="password-reset-modal text-center w-100 h-80">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}> 
         <h2 className="font-bold text-lg text-center py-4">Reset Password</h2>
         <div>
           <input
             type="email"
             placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
             required
             className="my-2 p-2 border rounded w-full"
+            value={email} onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="flex justify-evenly my-4">

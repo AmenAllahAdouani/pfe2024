@@ -4,11 +4,12 @@ import Navbar from "./Organs/Navbar";
 import { Profile } from "./Atoms/Profile";
 import Hosts from "./Atoms/Hosts";
 import Destinations from "./Atoms/Destinations";
+import SigninForm from "./Auth_/Forms/SigninForm";
 
 export default function Home() {
   return (
     <div>
-      <Destinations />
+      <SigninForm />
     </div>
   );
 }
