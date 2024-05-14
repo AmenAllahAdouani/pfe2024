@@ -37,7 +37,7 @@ function createData(
   sCol: string
 ) {
   return { 
-    Icon: <Icon sx={{ fontSize: 20 }} />, // Adjust icon size here
+    Icon: <Icon sx={{ fontSize: 20 }} />,
     fCol, 
     sCol
   };

@@ -85,7 +85,6 @@ const Destinations: React.FC = () => {
       <Modal isOpen={isAddModalOpen} closeModal={closeAddModal}>
         <form onSubmit={handleAddDestination}>
           <h2>Add New Destination</h2>
-          {/* Form fields and handlers for adding a destination */}
           <label>Destination Name:</label>
           <input type="text" placeholder="Enter destination" value={currentDestination.name} onChange={(e) => setCurrentDestination({ ...currentDestination, name: e.target.value })} />
           <label>Currency:</label>
@@ -103,7 +102,6 @@ const Destinations: React.FC = () => {
       <Modal isOpen={isUpdateModalOpen} closeModal={closeUpdateModal}>
         <form onSubmit={handleUpdateDestination}>
           <h2>Update Destination</h2>
-          {/* Form fields and handlers for updating a destination */}
           <label>Destination Name:</label>
           <input type="text" placeholder="Enter destination" value={currentDestination.name} onChange={(e) => setCurrentDestination({ ...currentDestination, name: e.target.value })} />
           <label>Currency:</label>

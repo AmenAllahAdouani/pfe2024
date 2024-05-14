@@ -5,11 +5,12 @@ import { Profile } from "./Atoms/Profile";
 import Hosts from "./Atoms/Hosts";
 import Destinations from "./Atoms/Destinations";
 import SigninForm from "./Auth_/Forms/SigninForm";
+import Trips from "./Atoms/Trips";
 
 export default function Home() {
   return (
     <div>
-      <SigninForm />
+      <Trips />
     </div>
   );
 }
