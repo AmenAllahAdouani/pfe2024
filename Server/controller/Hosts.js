@@ -30,7 +30,7 @@ class Host {
 
     static async updateHost(req, res) {
         try {
-            const updatedHost = await Host.findByIdAndUpdate(req.params.id, req.body, { new: true });
+            const updatedHost = await HostModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
             if (!updatedHost) {
                 console.log
                 return res.status(404).json({ message: 'Host not found' });

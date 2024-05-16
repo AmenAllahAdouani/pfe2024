@@ -71,14 +71,13 @@ const Hosts: React.FC = () => {
             if (modalMode === 'add') {
                 const response = await axios.post<Host>('http://localhost:3001/api/host', currentHost);
                 setHosts([...hosts, response.data]);
-            } else if (modalMode === 'edit' && currentHost._id) { // Ensure currentHost._id is defined
+            } else if (modalMode === 'edit' && currentHost._id) {
                 const response = await axios.put<Host>(`http://localhost:3001/api/host/${currentHost._id}`, currentHost);
                 // Update the host in the hosts array
                 setHosts(hosts.map(host => host._id === currentHost._id ? response.data : host));
             } else {
                 console.error('Host ID is missing.');
             }
-            // Fetch hosts again to update the list
             fetchHosts();
             // Close the modal after submitting
             closeModal();

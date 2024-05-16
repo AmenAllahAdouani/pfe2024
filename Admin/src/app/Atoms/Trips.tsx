@@ -24,6 +24,7 @@ const Trips: React.FC = () => {
   const [trips, setTrips] = useState<Trip[]>([]);
 
   const handlaValidationTrip = async (tripId: string) => {
+    console.log(tripId);
     try {
       const response = await axios.patch(`http://localhost:3001/api/trips/update/${tripId}`, {
         Situation: 'Valid trip'
@@ -87,10 +88,10 @@ const Trips: React.FC = () => {
               <TableCell>{formatDate(trip.Duration?.to)}</TableCell>
               <TableCell>{trip.Budget}</TableCell>
               <TableCell className="text-right">
-                <Button variant="outline" className="ml-1 p-2" onClick={() => handlaValidationTrip(trip.id)}>
+                <Button variant="outline" className="ml-1 p-2" onClick={() =>{handlaValidationTrip(trip._id)}}>
                   <CheckCircleIcon />
                 </Button>
-                <Button variant="outline" className="ml-1 p-2" onClick={() => handlaRefuseTrip(trip.id)}>
+                <Button variant="outline" className="ml-1 p-2" onClick={() => handlaRefuseTrip(trip._id)}>
                   <UnpublishedIcon />
                 </Button>
               </TableCell>

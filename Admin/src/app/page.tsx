@@ -14,7 +14,7 @@ import ManageTrips from "./Molecules/ManageTrips";
 export default function Home() {
   return (
     <div>
-      <ManageTrips />
+      <ManageHosts />
     </div>
   );
 }
