@@ -28,19 +28,13 @@ export default function Home() {
       <ProgressProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/signin" element={<SigninForm />} />
-            <Route path="/SignupForm" element={<SignupForm />} />
-            <Route path="/Destination" element={<Destinations />} />
+            <Route path="/" element={<Destinations />} />
             <Route path="/Duration" element={<Duration />} />
             <Route path="/TravelerType" element={<TravelerType />} />
             <Route path="/WithWhom" element={<WithWhom />} />
             <Route path="/Budget" element={<Budget />} />
             <Route path="/Loader" element={<Loader />} />
             <Route path="/Overview" element={<Overview />} />
-            <Route path="/Settings" element={<Settings />} />
-            <Route path="/reviews" element={<Reviews />} />
-            <Route path="/CommunityTrips" element={<CommunityTrips />} />
           </Routes>
         </Router>
       </ProgressProvider>

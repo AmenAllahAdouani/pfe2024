@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import UnpublishedIcon from '@mui/icons-material/Unpublished';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-// Define interfaces for your data structures
+
 interface Trip {
+  id: string;
   Destination: {
     name: string;
   };
@@ -22,12 +23,36 @@ interface Trip {
 const Trips: React.FC = () => {
   const [trips, setTrips] = useState<Trip[]>([]);
 
+  const handlaValidationTrip = async (tripId: string) => {
+    try {
+      const response = await axios.patch(`http://localhost:3001/api/trips/update/${tripId}`, {
+        Situation: 'Valid trip'
+      });
+      console.log("Trip validated:", response.data);
+    } catch (error) {
+      console.error("Failed to validate this trip:", error);
+      alert('Failed to validate this trip. Please try again.');
+    }
+  }
+  
+  const handlaRefuseTrip = async (tripId: string) => {
+    try {
+      const response = await axios.patch(`http://localhost:3001/api/trips/update/${tripId}`, {
+        Situation: 'Invalid trip'
+      });
+      console.log("Trip refused:", response.data);
+    } catch (error) {
+      console.error("Failed to refuse this trip:", error);
+      alert('Failed to refuse this trip. Please try again.');
+    }
+  }
+
   useEffect(() => {
     const fetchTrips = async () => {
       try {
         const response = await axios.get<Trip[]>('http://localhost:3001/api/trips');
         console.log('Fetched trips:', response.data);
-        setTrips(response.data); // Assuming response.data is an array of trip objects
+        setTrips(response.data);
       } catch (error) {
         console.error('Failed to fetch trips:', error);
       }
@@ -58,14 +83,14 @@ const Trips: React.FC = () => {
           {trips.map((trip, index) => (
             <TableRow key={index}>
               <TableCell>{trip.Destination.name}</TableCell>
-              <TableCell>{formatDate(trip.Duration?.from)}</TableCell> {/* {formatDate(trip.Duration.from)} */}
-              <TableCell>{formatDate(trip.Duration?.to)}</TableCell> {/* {formatDate(trip.Duration.to)} */}
+              <TableCell>{formatDate(trip.Duration?.from)}</TableCell>
+              <TableCell>{formatDate(trip.Duration?.to)}</TableCell>
               <TableCell>{trip.Budget}</TableCell>
               <TableCell className="text-right">
-                <Button variant="outline" className="ml-1 p-2">
+                <Button variant="outline" className="ml-1 p-2" onClick={() => handlaValidationTrip(trip.id)}>
                   <CheckCircleIcon />
                 </Button>
-                <Button variant="outline" className="ml-1 p-2">
+                <Button variant="outline" className="ml-1 p-2" onClick={() => handlaRefuseTrip(trip.id)}>
                   <UnpublishedIcon />
                 </Button>
               </TableCell>
@@ -83,6 +108,4 @@ const Trips: React.FC = () => {
 };
 
 export default Trips;
-
-
 

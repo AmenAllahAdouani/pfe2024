@@ -10,10 +10,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
 import Logo from '../../assets/TabaaniLogo.png';
 import LogoutIcon from '@mui/icons-material/Logout';
-{/*
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 import { auth } from '@/firebase';
 import { signOut } from 'firebase/auth';
-*/}
+
 
 
 
@@ -24,19 +24,16 @@ const Sidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
-  {/*
-
-const handleLogout = async () => {
+  const handleLogout = async () => {
     try {
       await signOut(auth);
+      console.log('logged out');
       localStorage.setItem('auth','0');
-      navigate('/');
     } catch (error) {
       console.error("Error signing out:", error);
     }
   };
 
-*/}
 
   return (
     <>
@@ -58,28 +55,33 @@ const handleLogout = async () => {
 
         <nav className="mt-2">
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400">
-            <AddLocationAltIcon></AddLocationAltIcon>
+            <AddLocationAltIcon />
             <span className="mx-4">Destinations</span>
           </a>
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400">
-            <GroupAddIcon></GroupAddIcon>
+            <GroupAddIcon />
             <span className="mx-4">Hosts</span>
           </a>
           
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400">
-            <RuleIcon></RuleIcon>
+            <RuleIcon />
             <span className="mx-4">Trips</span>
+          </a>
+
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400">
+            <NewspaperIcon />
+            <span className="mx-4">Newsletter</span>
           </a>
 
           <div className="border-b border-gray-400 my-2"></div>
           
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400">
-            <SettingsIcon></SettingsIcon>
+            <SettingsIcon />
             <span className="mx-4">Profile Settings</span>
           </a>
 
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400">  {/*onClick={handleLogout}*/}
-            <LogoutIcon></LogoutIcon>
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={handleLogout}> 
+            <LogoutIcon />
             <span className="mx-4">Logout</span>
           </a>
         </nav>

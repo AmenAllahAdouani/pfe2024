@@ -3,6 +3,8 @@ const router = express.Router();
 
 const Destination = require('../controller/Destination');
 
-// Define a route to handle POST and GET requests to create a new Destination 
-router.post('/Destination', Destination.createDestination);
+
+router.post('/', Destination.createDestination);
+router.get('/', Destination.getDestination);
+router.delete('/:id', Destination.deleteDestination);
 module.exports = router;

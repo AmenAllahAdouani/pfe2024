@@ -23,7 +23,8 @@ const TripsSchema = new mongoose.Schema({
         ArtLover: Number,
         NightOwl: Number
     },
-    Budget: String
+    Budget: String,
+    Situation: String
 })
 
 const TripsModel = mongoose.model('Trips', TripsSchema)
