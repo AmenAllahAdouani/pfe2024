@@ -6,6 +6,7 @@ const subscribeRouter = require('./router/Subscriber')
 const reviewsRouter = require('./router/Reviews')
 const destinationRouter = require('./router/Destination')
 const hostRouter = require('./router/Host')
+const newsletterRouter = require('./router/newsletterRouter')
 
 const app = express()
 app.use(express.json())
@@ -19,6 +20,7 @@ app.use('/api/subscriber', subscribeRouter);
 app.use('/api/reviews', reviewsRouter);
 app.use('/api/destination', destinationRouter);
 app.use('/api/host', hostRouter);
+app.use('/api/newsletter', newsletterRouter);
 
 app.listen(3001, () => {
     console.log("server is running")

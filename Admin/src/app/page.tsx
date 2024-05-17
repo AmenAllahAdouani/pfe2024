@@ -9,12 +9,16 @@ import ManageHosts from "./Molecules/ManageHosts";
 import ManageDestinations from "./Molecules/ManageDestinations";
 import ManageProfile from "./Molecules/ManageProfile";
 import ManageTrips from "./Molecules/ManageTrips";
+import News from "./Atoms/News";
+import ManageNews from "./Molecules/ManageNews";
+import NewsHistory from "./Atoms/NewsHistory";
+import ManageHistoryNews from "./Molecules/ManageHistoryNews";
 
 
 export default function Home() {
   return (
     <div>
-      <ManageHosts />
+      <ManageHistoryNews />
     </div>
   );
 }

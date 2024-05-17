@@ -1,23 +1,26 @@
-// Import necessary libraries
-const mongoose = require('mongoose');
+const Newsletter = require('../model/newsletterModel');
 const { sendEmail } = require('./emailService');
 const Subscriber = require('../model/Subscriber');
 
-// Database connection
-mongoose.connect('mongodb://localhost:27017/', {})
-.then(() => console.log("MongoDB connected"))
-.catch(err => console.log("MongoDB connection error: ", err));
-
-// Function to send newsletters to all subscribers
-async function sendNewsletterToAll() {
+async function sendNewsletterToSubscribers() {
     try {
+        // Retrieve the latest newsletter
+        const latestNewsletter = await Newsletter.findOne().sort({ createdAt: -1 });
+
+        if (!latestNewsletter) {
+            console.error('No newsletter found');
+            return;
+        }
+
         const subscribers = await Subscriber.find({}); // Fetch all subscribers
+
+        // Compose email content with dynamic newsletter title and content
         const newsletterContent = `
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>Newsletter</title>
+                <title>${latestNewsletter.title}</title>
                 <style>
                     body {
                         font-family: Arial, sans-serif;
@@ -52,19 +55,10 @@ async function sendNewsletterToAll() {
             <body>
                 <div class="container">
                     <div class="header">
-                        <h1>Welcome to Our Weekly Newsletter!</h1>
+                        <h1>${latestNewsletter.title}</h1>
                     </div>
                     <div class="content">
-                        <h2>Latest Updates</h2>
-                        <p>Hello, thank you for subscribing to our newsletter. Here are some of the latest updates from our team.</p>
-                        <h3>Feature Spotlight</h3>
-                        <p>This week, we've rolled out several new features that you might find interesting:</p>
-                        <ul>
-                            <li>Upcoming Networking Event</li>
-                            <li>Journey Checkpoint</li>
-                            <li>Community Stories</li>
-                            <li>What's happening at Tabaani</li>
-                        </ul>
+                        <p>${latestNewsletter.content}</p>
                     </div>
                     <div class="footer">
                         <p>&copy; 2024 Tabaani Wonder. All rights reserved.</p>
@@ -73,14 +67,15 @@ async function sendNewsletterToAll() {
                 </div>
             </body>
             </html>
-            `;
+        `;
 
+        // Send email to each subscriber
         subscribers.forEach(subscriber => {
-            sendEmail(subscriber.email, "Our Latest Newsletter", newsletterContent);
+            sendEmail(subscriber.email, latestNewsletter.title, newsletterContent);
         });
     } catch (error) {
-        console.error('Error fetching subscribers or sending emails:', error);
+        console.error('Error sending newsletter to subscribers:', error);
     }
 }
 
-sendNewsletterToAll();
+module.exports = { sendNewsletterToSubscribers };
