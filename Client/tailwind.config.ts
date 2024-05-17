@@ -1,13 +1,13 @@
 import type { Config } from "tailwindcss"
 
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-  ],
+	],
   prefix: "",
   theme: {
     container: {
@@ -60,18 +60,18 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        slideLeft: {
-          '0%': { transform: 'translateX(0%)', opacity: '1' },
-          '100%': { transform: 'translateX(-100%)', opacity: '0' }
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
-        slideRight: {
-          '0%': { transform: 'translateX(100%)', opacity: '0' },
-          '100%': { transform: 'translateX(0%)', opacity: '1' }
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
-        slideLeft: 'slideLeft 0.5s forwards',
-        slideRight: 'slideRight 0.5s forwards',
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
@@ -79,7 +79,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")], // Ensure this plugin supports animations if not consider adding manually or using another plugin.
-}
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
 
 export default config
