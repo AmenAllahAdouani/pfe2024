@@ -18,7 +18,7 @@ import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -28,9 +28,8 @@ const Sidebar = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      localStorage.setItem('auth','0')
-      localStorage.setItem('user',null)
-      navigate('/');
+      localStorage.setItem('auth','0');
+      //navigate('/');
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -87,13 +86,16 @@ const Sidebar = () => {
             <span className="mx-4">Community Trips</span>
           </a>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
-          e.preventDefault()
-          navigate("/reviews")
-          }}>
+          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" >
             <ArticleIcon></ArticleIcon>
             <span className="mx-4">Reviews</span>
           </a>
+          {/*
+          onClick={(e)=>{
+          e.preventDefault()
+          navigate("/reviews")
+          }}
+          */}
 
           <div className="border-b border-gray-400 my-2"></div>
           

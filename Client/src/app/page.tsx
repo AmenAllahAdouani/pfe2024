@@ -25,9 +25,8 @@ import Days from "./Organs/Days";
 export default function Home() {
   return (
     <main>
-      <CommunityTrips />
-      
-      
+
+      <Reviews />     
       
 
       {/*
