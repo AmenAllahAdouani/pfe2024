@@ -34,6 +34,16 @@ class Reviews {
             res.status(400).json({ message: error.message });
         }
     }
+
+    static async getAllReviews(_req, res) {
+        try { 
+            const reviews = await ReviewsModel.find().limit(6);
+            res.status(200).json(reviews);
+        } catch (error) {
+            console.error('Error fetching reviews:', error);
+            res.status(400).json({ message: error.message });
+        }
+    }
 }
 
 module.exports = Reviews;

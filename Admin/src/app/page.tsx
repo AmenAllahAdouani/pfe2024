@@ -13,12 +13,14 @@ import News from "./Atoms/News";
 import ManageNews from "./Molecules/ManageNews";
 import NewsHistory from "./Atoms/NewsHistory";
 import ManageHistoryNews from "./Molecules/ManageHistoryNews";
+import Analytics from "./Atoms/Analytics";
+import ViewAnalytics from "./Molecules/ViewAnalytics";
 
 
 export default function Home() {
   return (
     <div>
-      <ManageHistoryNews />
+      <ViewAnalytics />
     </div>
   );
 }

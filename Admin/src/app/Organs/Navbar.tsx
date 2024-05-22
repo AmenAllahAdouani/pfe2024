@@ -1,8 +1,7 @@
+"use client"
 import React, {useState, useEffect} from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import NotificationsIcon from '@mui/icons-material/Notifications';
-
-{/*
 import { auth, db } from "@/firebase";
 import { doc, getDoc } from "firebase/firestore"; 
 
@@ -10,12 +9,9 @@ import { doc, getDoc } from "firebase/firestore";
 type UserData = {
   username: string;
 };
-*/}
 
 
 const Navbar = () => {
-
-{/*
 
   const [userData, setUserData] = useState<UserData>({ username: "", });
 
@@ -36,8 +32,6 @@ const Navbar = () => {
     fetchUserData();
   }, []);
 
-*/}
-
   return (
       <div className="flex-1">
         <div className="bg-white py-2 md:py-0 m-0">
@@ -53,8 +47,7 @@ const Navbar = () => {
                   <NotificationsIcon color="disabled" style={{ fontSize: 28 }} />
                 </div>
                 <div className="hidden md:flex items-center text-gray-900 px-1 md:px-3 py-1 rounded-md text-sm font-medium">
-                  Admin
-                  {/*userData.username*/}
+                  {userData.username}
                 </div>
                 <Avatar className="h-8 w-8 ml-2">
                   <AvatarImage src="https://github.com/shadcn.png" />
