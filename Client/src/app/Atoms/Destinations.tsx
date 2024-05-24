@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { auth } from '@/firebase';
 import { useNavigate } from 'react-router-dom';
 import Appbar from '../Organs/Appbar';
 import { Button } from '@/components/ui/button';
@@ -69,8 +70,13 @@ const Destinations: React.FC = () => {
       setErrorMessage('Please select a country.');
       return;
     }
-
+    const user = auth.currentUser;
+    if (!user) {
+      console.error('No user is currently signed in.');
+      return;
+    }
     try {
+      const uid = user.uid;
       const response = await axios.post('http://localhost:3001/api/trips/trips', {
         Destination: {
           name: selectedCountry.name,
@@ -78,7 +84,8 @@ const Destinations: React.FC = () => {
           currency: selectedCountry.currency,
           language: selectedCountry.language,
           transport: selectedCountry.transport,
-        }
+        },
+        UserID: uid,
       });
       localStorage.setItem('tripID',response.data);
       console.log(localStorage.getItem('tripID'));

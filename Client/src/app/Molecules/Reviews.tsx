@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { auth } from '@/firebase';
 import Sidebar from '../Organs/Sidebar';
 import Navbar from '../Organs/Navbar';
 
@@ -11,6 +12,7 @@ const questions = [
 
 interface Review {
   _id?: string;
+  UserName: string;
   Questions: {
     Question1: string;
     Question2: string;
@@ -23,6 +25,18 @@ function Reviews() {
   const [currentAnswers, setCurrentAnswers] = useState<string[]>(["", "", ""]);
   const [animation, setAnimation] = useState("");
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      const user = auth.currentUser;
+      if (user) {
+        setUserName(user.displayName || "Anonymous");
+      }
+    };
+
+    fetchUserName();
+  }, []);
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -49,6 +63,7 @@ function Reviews() {
 
   const submitReview = async () => {
     const review: Review = {
+      UserName: userName,
       Questions: {
         Question1: currentAnswers[0],
         Question2: currentAnswers[1],

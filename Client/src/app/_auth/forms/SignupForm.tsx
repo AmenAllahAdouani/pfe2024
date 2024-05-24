@@ -3,17 +3,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import Image from 'next/image';
-import {
-  auth,
-  provider,
-  db
-} from '@/firebase';
-import {
-  createUserWithEmailAndPassword,
-  signInWithPopup,
-  sendEmailVerification,
-  GoogleAuthProvider
-} from 'firebase/auth';
+import { auth, provider, db } from '@/firebase';
+import { createUserWithEmailAndPassword, signInWithPopup, sendEmailVerification, GoogleAuthProvider } from 'firebase/auth';
 import { doc, setDoc } from "firebase/firestore";
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';

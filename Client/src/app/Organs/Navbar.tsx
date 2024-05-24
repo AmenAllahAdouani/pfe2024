@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Search from '@mui/icons-material/Search';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import { auth, db } from "@/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
@@ -31,6 +33,40 @@ const Navbar = () => {
     fetchUserData();
   }, []);
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (audio) {
+      const playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          setIsPlaying(true);
+        }).catch((error) => {
+          console.error("Error playing audio:", error);
+        });
+      }
+    }
+  }, []); // Run only once on component mount
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    
+    if (audio) {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play().catch((error) => {
+          console.error("Error playing audio:", error);
+        });
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
       <div className="flex-1">
         <div className="bg-white py-2 md:py-0 m-0">
@@ -38,7 +74,12 @@ const Navbar = () => {
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="md:flex space-x-4">
-                  <a href="#" className="text-gray-900 rounded-md text-xl font-bold">Overview</a>
+                  <div>
+                    <audio ref={audioRef} src="/music.mp3" loop />
+                    <button onClick={toggleMusic}>
+                      {isPlaying ? <VolumeUpIcon  color="disabled" style={{ fontSize: 28 }} /> : <VolumeOffIcon color="disabled" style={{ fontSize: 28 }} />}
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center">

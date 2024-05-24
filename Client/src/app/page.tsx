@@ -21,13 +21,22 @@ import Trip from "./Organs/Trip";
 import DestinationDisplay from "./Atoms/test";
 import GeneralInfo from "./Organs/GeneralInfo";
 import Days from "./Organs/Days";
+import Fans from "./Organs/Welcome/Fans";
+import MyTrips from "./Atoms/MyTrips";
+import ManageHistoryTrips from "./Molecules/ManageHistoryTrips";
 
 export default function Home() {
   return (
     <main>
 
-      <Reviews />     
+      {/* <MyTrips /> */} 
       
+      <Router>
+          <Routes>
+            <Route path="/" element={<ManageHistoryTrips />} />
+            <Route path="/myTrips" element={<ManageHistoryTrips />} />
+          </Routes>
+      </Router>
 
       {/*
       <CommunityTrips />

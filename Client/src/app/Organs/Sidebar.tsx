@@ -4,10 +4,8 @@ import React, { useState } from 'react';
 import PieChartIcon from '@mui/icons-material/PieChart';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
-import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ArticleIcon from '@mui/icons-material/Article';
 import SettingsIcon from '@mui/icons-material/Settings';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
@@ -18,7 +16,7 @@ import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -29,7 +27,7 @@ const Sidebar = () => {
     try {
       await signOut(auth);
       localStorage.setItem('auth','0');
-      //navigate('/');
+      navigate('/');
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -64,7 +62,7 @@ const Sidebar = () => {
 
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
-          navigate("/#")
+          navigate("/myTrips")
           }}>
             <ConfirmationNumberIcon></ConfirmationNumberIcon>
             <span className="mx-4">My Bookings</span>
@@ -72,30 +70,19 @@ const Sidebar = () => {
           
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
-          navigate("/#")
+          navigate("/Destination")
           }}>
             <FactCheckIcon></FactCheckIcon>
-            <span className="mx-4">My Wish List</span>
+            <span className="mx-4">Create new trip</span>
           </a>
           
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
-          navigate("/#")
+          navigate("/reviews")
           }}>
-            <Diversity3Icon></Diversity3Icon>
-            <span className="mx-4">Community Trips</span>
-          </a>
-          
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" >
             <ArticleIcon></ArticleIcon>
             <span className="mx-4">Reviews</span>
           </a>
-          {/*
-          onClick={(e)=>{
-          e.preventDefault()
-          navigate("/reviews")
-          }}
-          */}
 
           <div className="border-b border-gray-400 my-2"></div>
           
@@ -105,14 +92,6 @@ const Sidebar = () => {
           }}>
             <SettingsIcon></SettingsIcon>
             <span className="mx-4">Profile Settings</span>
-          </a>
-          
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
-          e.preventDefault()
-          navigate("/#")
-          }}>
-            <EmojiEventsIcon></EmojiEventsIcon>
-            <span className="mx-4">Achievements</span>
           </a>
 
           <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={handleLogout}>

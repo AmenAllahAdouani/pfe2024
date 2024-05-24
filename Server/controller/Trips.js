@@ -58,6 +58,35 @@ static async getAllTrips(_req, res) {
     }
 }
 
+static async getTripByUserID(req, res) {
+    try {
+        const userId = req.params.userId;
+
+        const trips = await TripsModel.find({ UserID: userId });
+
+        if (!trips || trips.length === 0) {
+            return res.status(404).json({ message: "Trips not found for this user" });
+        }
+
+        res.status(200).json(trips);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+}
+
+static async deleteTrip(req, res) {
+    try {
+        const deletedTrip = await TripsModel.findByIdAndDelete(req.params.id);
+        if (!deletedTrip) {
+            return res.status(404).json({ message: 'Trip not found' });
+        }
+        res.status(200).json({ message: 'Trip deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting trip:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
 }
 module.exports = Trips;
 

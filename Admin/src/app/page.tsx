@@ -20,7 +20,7 @@ import ViewAnalytics from "./Molecules/ViewAnalytics";
 export default function Home() {
   return (
     <div>
-      <ViewAnalytics />
+      .....
     </div>
   );
 }

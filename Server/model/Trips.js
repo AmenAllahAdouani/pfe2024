@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const TripsSchema = new mongoose.Schema({
+    UserID: String,
     Destination: {
         id: String,
         name: String,
