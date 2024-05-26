@@ -9,10 +9,13 @@
     { "id": "8", "name": "Bahrain, Manama", "timezone": "Asia/Bahrain", "currency": "BHD", "language": "Arabic", "transport": "Bus | Taxi" },
     { "id": "9", "name": "Lebanon, Beirut", "timezone": "Asia/Beirut", "currency": "LBP", "language": "Arabic French", "transport": "Bus | Taxi" },
     { "id": "10", "name": "Oman, Muscat", "timezone": "Asia/Muscat", "currency": "OMR", "language": "Arabic", "transport": "Bus | Taxi" },
-    { "id": "11", "name": "Djibouti, Djibouti City","timezone": "Africa/Djibouti", "currency": "DJF", "language": "French, Arabic", "transport": "Bus | Taxi" },
+    { "id": "11", "name": "Djibouti, Djibouti City","timezone": "Africa/Djibouti", "currency": "DJF", "language": "French Arabic", "transport": "Bus | Taxi" },
     { "id": "12", "name": "Kuwait, Kuwait City", "timezone": "Asia/Kuwait", "currency": "KWD", "language": "Arabic", "transport": "Bus | Taxi" },
     { "id": "13", "name": "Libya, Benghazi", "timezone": "Africa/Benghazi", "currency": "Libyan Dinar (LYD)", "language": "Arabic", "transport": "Bus | Taxi" },
     { "id": "14", "name": "Syria, Damascus", "timezone": "Asia/Damascus", "currency": "SYP", "language": "Arabic", "transport": "Bus | Taxi | Mini-bus" },
     { "id": "15", "name": "United Arab Emirates, Dubai", "timezone": "Asia/Dubai", "currency": "AED", "language": "Arabic English", "transport": "Bus | Taxi | Bicycle" },
-    { "id": "16", "name": "Turkey, Istanbul", "timezone": "Europe/Istanbul", "currency": "TRY", "language": "Turkish", "transport": "Metro | Bus | Taxi" }
+    { "id": "16", "name": "Turkey, Istanbul", "timezone": "Europe/Istanbul", "currency": "TRY", "language": "Turkish", "transport": "Metro | Bus | Taxi" },
+    { "id": "17", "name": "Tunisia, Bizerte", "timezone": "Africa/Bizerte", "currency": "TND", "language": "Arabic French", "transport": "Bus | Taxi" },
+    { "id": "18", "name": "Tunisia, Djerba", "timezone": "Africa/Djerba", "currency": "TND", "language": "Arabic French", "transport": "Bus | Taxi" },
+    { "id": "19", "name": "Tunisia, Sfax", "timezone": "Africa/Sfax", "currency": "TND", "language": "Arabic French", "transport": "Bus | Taxi" }
   ]

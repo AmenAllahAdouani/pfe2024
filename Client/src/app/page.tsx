@@ -13,7 +13,6 @@ import { ProgressProvider } from './Organs/ProgressContext';
 import SignupForm from "./_auth/forms/SignupForm";
 import SigninForm from "./_auth/forms/SigninForm";
 import Settings from "./Molecules/Settings";
-import Main from "./Main";
 import Reviews from "./Molecules/Reviews";
 import Welcome from "./Molecules/Welcome";
 import CommunityTrips from "./Molecules/CommunityTrips";
@@ -28,9 +27,30 @@ import ManageHistoryTrips from "./Molecules/ManageHistoryTrips";
 export default function Home() {
   return (
     <main>
+      
+      <ProgressProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<SigninForm />} />
+            <Route path="/SignupForm" element={<SignupForm />} />
+            <Route path="/Destination" element={<Destinations />} />
+            <Route path="/Duration" element={<Duration />} />
+            <Route path="/TravelerType" element={<TravelerType />} />
+            <Route path="/WithWhom" element={<WithWhom />} />
+            <Route path="/Budget" element={<Budget />} />
+            <Route path="/Loader" element={<Loader />} />
+            <Route path="/Overview" element={<Overview />} />
+            <Route path="/Settings" element={<Settings />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/myTrips" element={<ManageHistoryTrips />} />
+          </Routes>
+        </Router>
+      </ProgressProvider>
 
       {/* <MyTrips /> */} 
-      
+
+      {/*
+
       <Router>
           <Routes>
             <Route path="/" element={<ManageHistoryTrips />} />
@@ -38,7 +58,8 @@ export default function Home() {
           </Routes>
       </Router>
 
-      {/*
+
+
       <CommunityTrips />
       <Welcome />
       <Reviews />
@@ -64,6 +85,7 @@ export default function Home() {
         <Routes>
           <Route path="/" element={<SigninForm />} />
           <Route path="/Settings" element={<Settings />} />
+          <Route path="/myTrips" element={<ManageHistoryTrips />} />
           <Route path="/SignupForm" element={<SignupForm />} />
         </Routes>
       </Router>
@@ -95,6 +117,7 @@ export default function Home() {
             <Route path="/Settings" element={<Settings />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/CommunityTrips" element={<CommunityTrips />} />
+            <Route path="/myTrips" element={<ManageHistoryTrips />} />
           </Routes>
         </Router>
       </ProgressProvider>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import DeleteIcon from '@mui/icons-material/Delete';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import { auth } from '@/firebase';
+import Modal from './TravelExplore';
 
 interface Trip {
     id: string;
@@ -19,11 +20,16 @@ interface Trip {
     };
     Budget: string;
     Situation: string;
+    imageSrc: string;
 }
 
 const MyTrips: React.FC = () => {
     const [trips, setTrips] = useState<Trip[]>([]);
-    
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [modalImageSrc, setModalImageSrc] = useState<string>('');
+    const [modalInfoContent, setModalInfoContent] = useState<React.ReactNode>(null);
+    const [modalDaysContent, setModalDaysContent] = useState<React.ReactNode>(null);
+
     useEffect(() => {
         const fetchTrips = async () => {
             const user = auth.currentUser;
@@ -49,13 +55,48 @@ const MyTrips: React.FC = () => {
         return date ? new Date(date).toLocaleDateString() : 'N/A';
     };
 
-    const handleDeleteTrips = async (index: number) => {
+    const handleDeleteTrip = async (id: string) => {
         try {
-          await axios.delete(`http://localhost:3001/api/trips/${trips[index].id}`);
+            await axios.delete(`http://localhost:3001/api/trips/${id}`);
+            setTrips(trips.filter(trip => trip.id !== id));
         } catch (error) {
-          console.error('Error deleting trip:', error);
+            console.error('Error deleting trip:', error);
         }
-      };
+    };
+
+    const accessKey = "iI2yfYLptzSLsfdk134vS1InKO7_Tp58WixYDSBw45A";
+    
+    const handleExploreClick = async (trip: Trip) => {
+        try {
+            const response = await axios.get(`https://api.unsplash.com/search/photos`, {
+                params: {
+                    query: trip.Destination.name,
+                    client_id: accessKey,
+                    per_page: 1,
+                }
+            });
+
+            const imageUrl = response.data.results[0]?.urls?.regular || '';
+
+            setModalImageSrc(imageUrl);
+            setModalInfoContent( 
+                <div>
+                    <p><strong>Destination:</strong> {trip.Destination.name}</p>
+                    <p><strong>Budget:</strong> {trip.Budget}</p>
+                    <p><strong>Situation:</strong> {trip.Situation}</p>
+                </div>
+            );
+            setModalDaysContent(
+                <div>
+                    <p><strong>From:</strong> {formatDate(trip.Duration?.from)}</p>
+                    <p><strong>To:</strong> {formatDate(trip.Duration?.to)}</p>
+                </div>
+            );
+            setIsModalOpen(true);
+        } catch (error) {
+            console.error('Error fetching image from Unsplash:', error);
+        }
+    };
 
     return (
         <div>
@@ -83,10 +124,10 @@ const MyTrips: React.FC = () => {
                             <TableCell>{trip.Budget}</TableCell>
                             <TableCell>{trip.Situation}</TableCell>
                             <TableCell className="text-right">
-                                <Button variant="outline" className="ml-1 p-2 text-amber-500">
+                                <Button variant="outline" className="ml-1 p-2 text-gray-500" onClick={() => handleExploreClick(trip)}>
                                     <TravelExploreIcon />
                                 </Button>
-                                <Button variant="outline" className="ml-1 p-2 text-amber-500" onClick={() => handleDeleteTrips(index)}>
+                                <Button variant="outline" className="ml-1 p-2 text-gray-500" onClick={() => handleDeleteTrip(trip.id)}>
                                     <DeleteIcon />
                                 </Button>
                             </TableCell>
@@ -99,10 +140,15 @@ const MyTrips: React.FC = () => {
                     )}
                 </TableBody>
             </Table>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                imageSrc={modalImageSrc}
+                infoContent={modalInfoContent}
+                daysContent={modalDaysContent}
+            />
         </div>
     );
 }
 
 export default MyTrips;
-
-

@@ -1,0 +1,325 @@
+{
+    "initialDayPlans": {
+      "day1": [
+        {
+          "time": "09:00 AM - Meeting point",
+          "title": "Main Conference Room",
+          "description": "We will start the day with a brief introduction and overview of the day's activities."
+        },
+        {
+          "time": "10:00 AM - Workshop",
+          "title": "Room 101",
+          "description": "Interactive workshop on the latest industry trends."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Networking Session",
+          "title": "Lounge",
+          "description": "Opportunity to network with other attendees."
+        },
+        {
+          "time": "03:00 PM - Afternoon Session",
+          "title": "Main Conference Room",
+          "description": "Continuation of the day's activities."
+        },
+        {
+          "time": "05:00 PM - Keynote Speaker",
+          "title": "Auditorium",
+          "description": "Presentation by a renowned industry expert."
+        }
+      ],
+      "day2": [
+        {
+          "time": "09:00 AM - Opening Remarks",
+          "title": "Main Conference Room",
+          "description": "Start the day with some important announcements."
+        },
+        {
+          "time": "10:00 AM - Panel Discussion",
+          "title": "Room 102",
+          "description": "Engage in a discussion with industry leaders."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Team Building Activity",
+          "title": "Outdoor Area",
+          "description": "Participate in fun and engaging team-building exercises."
+        },
+        {
+          "time": "03:00 PM - Breakout Sessions",
+          "title": "Various Rooms",
+          "description": "Choose from several breakout sessions on different topics."
+        },
+        {
+          "time": "05:00 PM - Evening Social",
+          "title": "Terrace",
+          "description": "Unwind and socialize with drinks and appetizers."
+        }
+      ],
+      "day3": [
+        {
+          "time": "09:00 AM - Breakfast and Networking",
+          "title": "Cafeteria",
+          "description": "Enjoy breakfast while networking with peers."
+        },
+        {
+          "time": "10:00 AM - Training Session",
+          "title": "Room 201",
+          "description": "Hands-on training session on new tools and technologies."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Guest Speaker",
+          "title": "Main Conference Room",
+          "description": "Talk by an influential guest speaker."
+        },
+        {
+          "time": "03:00 PM - Interactive Workshop",
+          "title": "Room 202",
+          "description": "Participate in an interactive workshop."
+        },
+        {
+          "time": "05:00 PM - Feedback Session",
+          "title": "Main Conference Room",
+          "description": "Share feedback and suggestions for future events."
+        }
+      ],
+      "day4": [
+        {
+          "time": "09:00 AM - Morning Yoga",
+          "title": "Garden",
+          "description": "Start the day with a relaxing yoga session."
+        },
+        {
+          "time": "10:00 AM - Seminar",
+          "title": "Main Conference Room",
+          "description": "Attend a seminar on professional development."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Group Activity",
+          "title": "Room 301",
+          "description": "Engage in group activities and discussions."
+        },
+        {
+          "time": "03:00 PM - Project Showcase",
+          "title": "Exhibition Hall",
+          "description": "Present and view various projects."
+        },
+        {
+          "time": "05:00 PM - Closing Remarks",
+          "title": "Main Conference Room",
+          "description": "End the day with closing remarks and announcements."
+        }
+      ],
+      "day5": [
+        {
+          "time": "09:00 AM - Welcome Breakfast",
+          "title": "Dining Hall",
+          "description": "Start the day with a welcome breakfast."
+        },
+        {
+          "time": "10:00 AM - Keynote Address",
+          "title": "Auditorium",
+          "description": "Keynote address by an industry expert."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Panel Discussion",
+          "title": "Room 401",
+          "description": "Participate in a panel discussion."
+        },
+        {
+          "time": "03:00 PM - Workshop",
+          "title": "Room 402",
+          "description": "Hands-on workshop on new techniques."
+        },
+        {
+          "time": "05:00 PM - Evening Reception",
+          "title": "Lobby",
+          "description": "Network and socialize at the evening reception."
+        }
+      ],
+      "day6": [
+        {
+          "time": "09:00 AM - Morning Briefing",
+          "title": "Main Conference Room",
+          "description": "Start the day with a morning briefing."
+        },
+        {
+          "time": "10:00 AM - Roundtable Discussion",
+          "title": "Room 501",
+          "description": "Engage in roundtable discussions on key issues."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Interactive Session",
+          "title": "Room 502",
+          "description": "Participate in an interactive session."
+        },
+        {
+          "time": "03:00 PM - Innovation Showcase",
+          "title": "Exhibition Hall",
+          "description": "Explore innovative solutions and ideas."
+        },
+        {
+          "time": "05:00 PM - Networking Dinner",
+          "title": "Banquet Hall",
+          "description": "Network with peers over dinner."
+        }
+      ],
+      "day7": [
+        {
+          "time": "09:00 AM - Coffee and Networking",
+          "title": "Lobby",
+          "description": "Enjoy coffee while networking."
+        },
+        {
+          "time": "10:00 AM - Seminar",
+          "title": "Main Conference Room",
+          "description": "Attend a seminar on emerging trends."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Group Discussion",
+          "title": "Room 601",
+          "description": "Participate in group discussions on various topics."
+        },
+        {
+          "time": "03:00 PM - Case Study Analysis",
+          "title": "Room 602",
+          "description": "Analyze and discuss case studies."
+        },
+        {
+          "time": "05:00 PM - Evening Social",
+          "title": "Terrace",
+          "description": "Socialize and unwind with fellow participants."
+        }
+      ],
+      "day8": [
+        {
+          "time": "09:00 AM - Registration and Breakfast",
+          "title": "Lobby",
+          "description": "Register and enjoy breakfast."
+        },
+        {
+          "time": "10:00 AM - Training Workshop",
+          "title": "Room 701",
+          "description": "Hands-on training workshop."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Leadership Panel",
+          "title": "Main Conference Room",
+          "description": "Panel discussion on leadership."
+        },
+        {
+          "time": "03:00 PM - Breakout Sessions",
+          "title": "Various Rooms",
+          "description": "Choose from multiple breakout sessions."
+        },
+        {
+          "time": "05:00 PM - Cocktail Hour",
+          "title": "Lounge",
+          "description": "Enjoy cocktails and network with peers."
+        }
+      ],
+      "day9": [
+        {
+          "time": "09:00 AM - Morning Meditation",
+          "title": "Garden",
+          "description": "Start the day with a meditation session."
+        },
+        {
+          "time": "10:00 AM - Workshop",
+          "title": "Room 801",
+          "description": "Participate in a workshop on best practices."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Expert Talk",
+          "title": "Main Conference Room",
+          "description": "Talk by an industry expert."
+        },
+        {
+          "time": "03:00 PM - Hands-On Session",
+          "title": "Room 802",
+          "description": "Participate in a hands-on session."
+        },
+        {
+          "time": "05:00 PM - Feedback and Closing",
+          "title": "Main Conference Room",
+          "description": "Share feedback and closing remarks."
+        }
+      ],
+      "day10": [
+        {
+          "time": "09:00 AM - Breakfast and Briefing",
+          "title": "Cafeteria",
+          "description": "Start the day with breakfast and a briefing."
+        },
+        {
+          "time": "10:00 AM - Final Presentations",
+          "title": "Main Conference Room",
+          "description": "Present final projects and receive feedback."
+        },
+        {
+          "time": "12:00 PM - Lunch Break",
+          "title": "Dining Hall",
+          "description": "Enjoy a delicious lunch with your fellow participants."
+        },
+        {
+          "time": "01:00 PM - Award Ceremony",
+          "title": "Auditorium",
+          "description": "Award ceremony to recognize outstanding contributions."
+        },
+        {
+          "time": "03:00 PM - Farewell Session",
+          "title": "Main Conference Room",
+          "description": "Final remarks and goodbyes."
+        },
+        {
+          "time": "05:00 PM - Closing Dinner",
+          "title": "Banquet Hall",
+          "description": "Enjoy a closing dinner with fellow participants."
+        }
+      ]
+    }
+  }
+  
