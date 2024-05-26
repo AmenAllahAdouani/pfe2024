@@ -22,7 +22,7 @@ app.use('/api/reviews', reviewsRouter);
 app.use('/api/destination', destinationRouter);
 app.use('/api/host', hostRouter);
 app.use('/api/newsletter', newsletterRouter);
-app.use('/api/plans', newsletterRouter);
+app.use('/api/plans', planRouter);
 
 app.listen(3001, () => {
     console.log("server is running")

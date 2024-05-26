@@ -46,13 +46,13 @@ const Sidebar = () => {
       <div className={`transform top-0 left-0 w-64 bg-gray-800 h-full fixed overflow-auto ease-in-out transition-all duration-300 z-30 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
         <div className="flex items-center justify-center mt-4">
           <div className="flex flex-col items-center justify-center">
-            <Image src={Logo} alt="Place" width={85} height={85} layout="fixed" />
+            <Image src={Logo} alt="Place" width={100} height={100} layout="fixed" />
             <span className="text-gray-400 text-2xl font-semibold">My Trip Maker</span>
           </div>
         </div>
 
-        <nav className="mt-2">
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+        <nav className="mt-4">
+          <a className="flex items-center py-5 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
           navigate("/Overview")
           }}>
@@ -60,7 +60,7 @@ const Sidebar = () => {
             <span className="mx-4">Overview</span>
           </a>
 
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          <a className="flex items-center py-5 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
           navigate("/myTrips")
           }}>
@@ -68,7 +68,7 @@ const Sidebar = () => {
             <span className="mx-4">My Bookings</span>
           </a>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          <a className="flex items-center py-5 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
           navigate("/Destination")
           }}>
@@ -76,7 +76,7 @@ const Sidebar = () => {
             <span className="mx-4">Create new trip</span>
           </a>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          <a className="flex items-center py-5 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
           navigate("/reviews")
           }}>
@@ -86,7 +86,7 @@ const Sidebar = () => {
 
           <div className="border-b border-gray-400 my-2"></div>
           
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
+          <a className="flex items-center py-5 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={(e)=>{
           e.preventDefault()
           navigate("/Settings")
           }}>
@@ -94,7 +94,7 @@ const Sidebar = () => {
             <span className="mx-4">Profile Settings</span>
           </a>
 
-          <a className="flex items-center py-4 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={handleLogout}>
+          <a className="flex items-center py-5 px-6 text-gray-400 hover:bg-gray-600 hover:text-amber-400 hover:border-l-4 hover:border-amber-400" onClick={handleLogout}>
             <LogoutIcon></LogoutIcon>
             <span className="mx-4">Logout</span>
           </a>

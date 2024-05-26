@@ -61,18 +61,47 @@ const DayPlanAccordion: React.FC = () => {
   useEffect(() => {
     const fetchTrips = async () => {
       const key = localStorage.getItem('tripID');
-      const response = await axios.get<{ Duration: { numberOfDays: number } }>(`http://localhost:3001/api/trips/trips/${key}`);
-      const daysArray = Array.from({ length: response.data.Duration.numberOfDays }, (_, i) => i + 1);
-      setNumberOfDays(response.data.Duration.numberOfDays);
-
-      const initialDayPlans: Record<number, DayPlan[]> = {};
-      for (let i = 1; i <= response.data.Duration.numberOfDays; i++) {
-        initialDayPlans[i] = (dayPlansData.initialDayPlans as Record<string, DayPlan[]>)[`day${i}`];
+      if (!key) {
+        console.error('No tripID found in localStorage');
+        return;
       }
-      setDayPlans(initialDayPlans);
+
+      try {
+        const response = await axios.get<{ Duration: { numberOfDays: number } }>(`http://localhost:3001/api/trips/trips/${key}`);
+        setNumberOfDays(response.data.Duration.numberOfDays);
+
+        const initialDayPlans: Record<number, DayPlan[]> = {};
+        for (let i = 1; i <= response.data.Duration.numberOfDays; i++) {
+          initialDayPlans[i] = (dayPlansData.initialDayPlans as Record<string, DayPlan[]>)[`day${i}`];
+        }
+        setDayPlans(initialDayPlans);
+      } catch (error) {
+        console.error('Error fetching trips:', error);
+      }
     };
     fetchTrips();
   }, []);
+
+  useEffect(() => {
+    const savePlan = async () => {
+      const tripID = localStorage.getItem('tripID');
+      if (!tripID) {
+        console.error('No tripID found in localStorage');
+        return;
+      }
+
+      try {
+        console.log('Saving plan with tripID:', tripID);
+        console.log('dayPlans:', dayPlans);
+        await axios.post('http://localhost:3001/api/plans/savePlan', { tripID, dayPlans });
+      } catch (error) {
+        console.error('Error saving plan:', error);
+      }
+    };
+    if (Object.keys(dayPlans).length > 0) {
+      savePlan();
+    }
+  }, [dayPlans]);
 
   const handleClick = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -92,23 +121,12 @@ const DayPlanAccordion: React.FC = () => {
     event.stopPropagation();
   };
 
-  const savePlansToDatabase = async () => {
-    const key = localStorage.getItem('tripID');
-    try {
-      await axios.post(`http://localhost:3001/api/plans`, { tripID: key, dayPlans });
-      alert('Day plans saved successfully!');
-    } catch (error) {
-      console.error('Error saving day plans:', error);
-      alert('Failed to save day plans. Please try again.');
-    }
-  };
-
   const accordionItems = Object.keys(dayPlans).map((day, index) => (
-    <AccordionItem
-      key={index}
-      isOpen={openIndex === index}
+    <AccordionItem 
+      key={index} 
+      isOpen={openIndex === index} 
       onToggle={() => handleClick(index)}
-    >
+    > 
       <AccordionTrigger onClick={() => handleClick(index)}>
         <h1 className="text-amber-500 text-xl sm:text-2xl font-bold">Day {day}</h1>
         <p className="text-sm text-gray-800">Check out the day plan below to see what you'll get up to. Feel free to personalize this offer.</p>
@@ -122,21 +140,21 @@ const DayPlanAccordion: React.FC = () => {
                 <div>
                   {editMode[parseInt(day)] ? (
                     <>
-                      <input
+                      <input 
                         type="text"
-                        value ={plan.time}
+                        value={plan.time}
                         onChange={(e) => handlePlanChange(parseInt(day), planIndex, 'time', e.target.value)}
                         className="block w-full text-sm font-normal leading-none text-gray-900"
                         onClick={stopPropagation}
                       />
-                      <input
+                      <input 
                         type="text"
                         value={plan.title}
                         onChange={(e) => handlePlanChange(parseInt(day), planIndex, 'title', e.target.value)}
                         className="mt-1 w-full text-lg font-semibold"
                         onClick={stopPropagation}
                       />
-                      <textarea
+                      <textarea 
                         value={plan.description}
                         onChange={(e) => handlePlanChange(parseInt(day), planIndex, 'description', e.target.value)}
                         className="mt-1 w-full text-base font-normal text-gray-500"
@@ -157,14 +175,14 @@ const DayPlanAccordion: React.FC = () => {
         </ol>
         <div className="mt-4 flex justify-end">
           {editMode[parseInt(day)] ? (
-            <button
+            <button 
               className="bg-gray-700 text-white px-4 py-2 rounded"
               onClick={() => toggleEditMode(parseInt(day))}
             >
               Save
             </button>
           ) : (
-            <button
+            <button 
               className="bg-amber-500 text-white px-4 py-2 rounded"
               onClick={(e) => { e.stopPropagation(); toggleEditMode(parseInt(day)); }}
             >
@@ -182,14 +200,6 @@ const DayPlanAccordion: React.FC = () => {
         <Accordion>
           {accordionItems}
         </Accordion>
-        <div className="mt-4 flex justify-end">
-          <button
-            className="bg-amber-500 text-white px-4 py-2 rounded"
-            onClick={savePlansToDatabase}
-          >
-            Save All Plans
-          </button>
-        </div>
       </div>
     </div>
   );
