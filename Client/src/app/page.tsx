@@ -23,11 +23,37 @@ import Days from "./Organs/Days";
 import Fans from "./Organs/Welcome/Fans";
 import MyTrips from "./Atoms/MyTrips";
 import ManageHistoryTrips from "./Molecules/ManageHistoryTrips";
+import PlanList from "./Organs/planList";
+import DayPlanAccordion from "./Organs/planList";
 
 export default function Home() {
   return (
     <main>
       
+      <ProgressProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/signin" element={<SigninForm />} />
+            <Route path="/SignupForm" element={<SignupForm />} />
+            <Route path="/Destination" element={<Destinations />} />
+            <Route path="/Duration" element={<Duration />} />
+            <Route path="/TravelerType" element={<TravelerType />} />
+            <Route path="/WithWhom" element={<WithWhom />} />
+            <Route path="/Budget" element={<Budget />} />
+            <Route path="/Loader" element={<Loader />} />
+            <Route path="/Overview" element={<Overview />} />
+            <Route path="/Settings" element={<Settings />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/CommunityTrips" element={<CommunityTrips />} />
+            <Route path="/myTrips" element={<ManageHistoryTrips />} />
+          </Routes>
+        </Router>
+      </ProgressProvider>
+      
+
+      {/* <MyTrips /> 
+      <DayPlanAccordion />
       <ProgressProvider>
         <Router>
           <Routes>
@@ -46,8 +72,8 @@ export default function Home() {
           </Routes>
         </Router>
       </ProgressProvider>
-
-      {/* <MyTrips /> */} 
+      
+      */} 
 
       {/*
 

@@ -17,14 +17,10 @@ exports.savePlan = async (req, res) => {
 
 exports.getPlan = async (req, res) => {
   try {
-    const { tripID } = req.query;
-    if (!tripID) {
-      return res.status(400).json({ error: 'tripID is required' });
-    }
-    const plan = await Plan.findOne({ tripID });
-    res.json(plan);
+    const plans = await Plan.find({});
+    res.json(plans);
   } catch (error) {
-    console.error('Error fetching plan:', error);
+    console.error('Error fetching plans:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };

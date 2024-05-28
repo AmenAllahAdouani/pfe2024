@@ -109,6 +109,7 @@ const Destinations: React.FC = () => {
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
             onFocus={() => setIsDropdownVisible(true)}
+            autoComplete='new-password'
           />
           <p className='text-red-500 mt-2 text-center' >{errorMessage}</p>
           {isDropdownVisible && (
