@@ -4237,8 +4237,552 @@
           "description": "Celebrate your last night in Djerba with a final night out, enjoying the vibrant nightlife and local entertainment."
         }
       ]
-    }
-
+    },
+    "Egypt, Cairo":{
+      "day1": [
+        {
+          "time": "09:00 AM - Arrival",
+          "title": "Cairo International Airport",
+          "description": "Arrive at Cairo International Airport and transfer to your hotel."
+        },
+        {
+          "time": "12:00 PM - Check-in",
+          "title": "Hotel Check-in",
+          "description": "Check-in to your hotel and freshen up."
+        },
+        {
+          "time": "02:00 PM - Lunch",
+          "title": "Local Restaurant",
+          "description": "Enjoy a delicious Egyptian lunch at a local restaurant, trying specialties like koshari and ful medames."
+        },
+        {
+          "time": "04:00 PM - Historical Tour",
+          "title": "Cairo Citadel",
+          "description": "Visit the historic Cairo Citadel, exploring its mosques, museums, and panoramic views of the city."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Nile View Restaurant",
+          "description": "Dine at a restaurant with a view of the Nile, enjoying traditional Egyptian cuisine."
+        }
+      ],
+      "day2": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Egyptian Museum",
+          "description": "Explore the Egyptian Museum, home to a vast collection of ancient Egyptian artifacts, including the treasures of Tutankhamun."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Traditional Egyptian Restaurant",
+          "description": "Have lunch at a restaurant offering traditional Egyptian dishes such as mahshi and molokhia."
+        },
+        {
+          "time": "03:00 PM - Cultural Experience",
+          "title": "Coptic Cairo",
+          "description": "Visit Coptic Cairo, exploring its ancient churches and the Coptic Museum."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Fine Dining",
+          "description": "Dine at a fine dining restaurant, savoring gourmet Egyptian cuisine."
+        }
+      ],
+      "day3": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Pyramids of Giza",
+          "description": "Visit the iconic Pyramids of Giza and the Sphinx, exploring the ancient wonders of the world."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Restaurant Near Pyramids",
+          "description": "Enjoy lunch at a restaurant near the Pyramids, with stunning views of these ancient structures."
+        },
+        {
+          "time": "03:00 PM - Cultural Visit",
+          "title": "Saqqara",
+          "description": "Explore Saqqara, home to the Step Pyramid of Djoser and numerous ancient tombs."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Nile Cruise Dinner",
+          "description": "Dine on a Nile cruise, enjoying a buffet dinner with live entertainment as you sail along the river."
+        }
+      ],
+      "day4": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Islamic Cairo",
+          "description": "Visit Islamic Cairo, exploring historic mosques, madrasas, and the bustling Khan El Khalili market."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Market Food",
+          "description": "Try local street food from vendors in Khan El Khalili market, enjoying the flavors of Cairo."
+        },
+        {
+          "time": "03:00 PM - Historical Tour",
+          "title": "Al-Azhar Park",
+          "description": "Visit Al-Azhar Park, an oasis in the city offering historical insights and beautiful landscapes."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Restaurant in Islamic Cairo",
+          "description": "Dine at a restaurant in Islamic Cairo, enjoying traditional Egyptian cuisine in a historic setting."
+        }
+      ],
+      "day5": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Memphis",
+          "description": "Explore the ancient city of Memphis and see the colossal statue of Ramses II."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Local Eatery",
+          "description": "Have lunch at a local eatery, trying more traditional dishes like kebabs and falafel."
+        },
+        {
+          "time": "03:00 PM - Cultural Experience",
+          "title": "Dahshur Pyramids",
+          "description": "Visit the Dahshur Pyramids, including the Bent Pyramid and the Red Pyramid."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Rooftop Restaurant",
+          "description": "Dine at a rooftop restaurant, enjoying panoramic views of Cairo and a variety of Egyptian dishes."
+        }
+      ],
+      "day6": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Manial Palace Museum",
+          "description": "Visit the Manial Palace Museum, exploring the lavish interiors and beautiful gardens."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Historic Café",
+          "description": "Have lunch at a historic café, experiencing the old-world charm and classic Egyptian dishes."
+        },
+        {
+          "time": "03:00 PM - Art and History",
+          "title": "Museum of Islamic Art",
+          "description": "Explore the Museum of Islamic Art, home to an extensive collection of artifacts and artworks from the Islamic world."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Modern Egyptian Restaurant",
+          "description": "Dine at a restaurant known for its modern take on traditional Egyptian cuisine."
+        }
+      ],
+      "day7": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Tour",
+          "title": "Al-Muizz Street",
+          "description": "Take a walking tour of Al-Muizz Street, one of Cairo's oldest streets, lined with historic buildings and monuments."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Street Food",
+          "description": "Enjoy lunch from street vendors, trying popular Egyptian snacks like taameya and shawarma."
+        },
+        {
+          "time": "03:00 PM - Cultural Experience",
+          "title": "The Hanging Church",
+          "description": "Visit the Hanging Church, one of the oldest churches in Egypt, located in the Coptic Cairo area."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Riverfront Restaurant",
+          "description": "Dine at a riverfront restaurant, enjoying the ambiance and traditional Egyptian dishes."
+        }
+      ],
+      "day8": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Baron Empain Palace",
+          "description": "Explore the Baron Empain Palace, a historic Hindu-inspired mansion in Heliopolis."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Heliopolis Café",
+          "description": "Have lunch at a café in Heliopolis, enjoying a mix of Egyptian and international dishes."
+        },
+        {
+          "time": "03:00 PM - Historical Exploration",
+          "title": "Al-Rifa'i and Sultan Hassan Mosques",
+          "description": "Visit the grand mosques of Al-Rifa'i and Sultan Hassan, marveling at their architecture and history."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Historic Restaurant",
+          "description": "Dine at a historic restaurant in Cairo, savoring classic Egyptian dishes."
+        }
+      ],
+      "day9": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Gayer-Anderson Museum",
+          "description": "Visit the Gayer-Anderson Museum, housed in two adjacent historic houses and showcasing a collection of antiques."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Local Bistro",
+          "description": "Enjoy lunch at a local bistro, trying a variety of Egyptian and Mediterranean dishes."
+        },
+        {
+          "time": "03:00 PM - Cultural Visit",
+          "title": "El Fishawy Café",
+          "description": "Relax at El Fishawy Café in Khan El Khalili, one of Cairo's oldest cafés, known for its traditional tea and coffee."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Nile Dinner",
+          "description": "Have a dinner on the Nile, enjoying a meal with a view of the river and the city lights."
+        }
+      ],
+      "day10": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Art and History",
+          "title": "Abdeen Palace Museum",
+          "description": "Explore the Abdeen Palace Museum, showcasing a collection of royal artifacts and historical exhibits."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Historic District",
+          "description": "Have lunch in a historic district, enjoying a variety of Egyptian dishes in a charming setting."
+        },
+        {
+          "time": "03:00 PM - Souvenir Shopping",
+          "title": "Khan El Khalili",
+          "description": "Spend your afternoon shopping for souvenirs in Khan El Khalili, finding unique gifts and treasures."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Farewell Dinner",
+          "description": "Enjoy a farewell dinner at a top-rated restaurant, reflecting on your time in Cairo and savoring your favorite dishes."
+        }
+      ]
+    },
+    "Algier, Oran":{
+      "day1": [
+        {
+          "time": "09:00 AM - Arrival",
+          "title": "Ahmed Ben Bella Airport",
+          "description": "Arrive at Ahmed Ben Bella Airport and transfer to your hotel."
+        },
+        {
+          "time": "12:00 PM - Check-in",
+          "title": "Hotel Check-in",
+          "description": "Check-in to your hotel and freshen up."
+        },
+        {
+          "time": "02:00 PM - Lunch",
+          "title": "Local Restaurant",
+          "description": "Enjoy a delicious Algerian lunch at a local restaurant, trying specialties like couscous and mechoui."
+        },
+        {
+          "time": "04:00 PM - Historical Tour",
+          "title": "Fort Santa Cruz",
+          "description": "Visit Fort Santa Cruz, an iconic historical site offering panoramic views of the city and the Mediterranean Sea."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Seaside Restaurant",
+          "description": "Dine at a seaside restaurant, enjoying fresh seafood and traditional Algerian dishes."
+        }
+      ],
+      "day2": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Le Théâtre d'Oran",
+          "description": "Visit Le Théâtre d'Oran, a historic theater known for its beautiful architecture and cultural significance."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Traditional Algerian Restaurant",
+          "description": "Have lunch at a restaurant offering traditional Algerian dishes such as chorba and tajine."
+        },
+        {
+          "time": "03:00 PM - Art and Culture",
+          "title": "Ahmed Zabana National Museum",
+          "description": "Explore the Ahmed Zabana National Museum, home to a wide array of historical artifacts and artworks."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Fine Dining",
+          "description": "Dine at a fine dining restaurant, savoring gourmet Algerian cuisine."
+        }
+      ],
+      "day3": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Palais de la Culture",
+          "description": "Visit the Palais de la Culture, an important cultural center hosting various exhibitions and events."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Local Bistro",
+          "description": "Enjoy lunch at a local bistro, trying a variety of Algerian and Mediterranean dishes."
+        },
+        {
+          "time": "03:00 PM - Cultural Visit",
+          "title": "Cathedral of Oran",
+          "description": "Explore the Cathedral of Oran, a stunning example of colonial architecture and history."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Rooftop Restaurant",
+          "description": "Dine at a rooftop restaurant, enjoying panoramic views of Oran and a variety of Algerian dishes."
+        }
+      ],
+      "day4": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Art and History",
+          "title": "Museum of Modern Art of Oran",
+          "description": "Visit the Museum of Modern Art of Oran, showcasing contemporary artworks from local and international artists."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Historic Café",
+          "description": "Have lunch at a historic café, experiencing the charm and classic Algerian dishes."
+        },
+        {
+          "time": "03:00 PM - Fashion and Style",
+          "title": "Shopping in Oran",
+          "description": "Spend the afternoon shopping in Oran, exploring boutiques and stores for the latest in Algerian fashion."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Trendy Restaurant",
+          "description": "Dine at a trendy restaurant, enjoying modern Algerian cuisine in a stylish setting."
+        }
+      ],
+      "day5": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Place du 1er Novembre",
+          "description": "Visit Place du 1er Novembre, a significant historical and cultural landmark in Oran."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Market Food",
+          "description": "Try local street food from vendors in a bustling market, enjoying the flavors of Oran."
+        },
+        {
+          "time": "03:00 PM - Cultural Experience",
+          "title": "Oran Medina",
+          "description": "Explore the Oran Medina, a historic district with narrow streets, traditional architecture, and local shops."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Historic Restaurant",
+          "description": "Dine at a historic restaurant in Oran, savoring classic Algerian dishes."
+        }
+      ],
+      "day6": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Qasr el-Bey",
+          "description": "Visit Qasr el-Bey, a historic palace that offers insight into Oran's rich history."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Seafront Café",
+          "description": "Have lunch at a seafront café, enjoying fresh seafood and a relaxing atmosphere."
+        },
+        {
+          "time": "03:00 PM - Art Exploration",
+          "title": "Local Art Galleries",
+          "description": "Explore local art galleries, discovering works by contemporary Algerian artists."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Modern Algerian Restaurant",
+          "description": "Dine at a modern Algerian restaurant, savoring innovative takes on traditional dishes."
+        }
+      ],
+      "day7": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Tour",
+          "title": "Great Synagogue of Oran",
+          "description": "Visit the Great Synagogue of Oran, a significant historical and architectural site."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Local Eatery",
+          "description": "Enjoy lunch at a local eatery, trying a variety of Algerian dishes."
+        },
+        {
+          "time": "03:00 PM - Cultural Experience",
+          "title": "Dar el-Bahia",
+          "description": "Explore Dar el-Bahia, a historic building that now serves as a cultural center and art gallery."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Rooftop Bar and Grill",
+          "description": "Dine at a rooftop bar and grill, enjoying the ambiance and delicious food."
+        }
+      ],
+      "day8": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Château Neuf",
+          "description": "Visit Château Neuf, an old castle that offers a glimpse into Oran's past."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Local Café",
+          "description": "Have lunch at a local café, enjoying Algerian pastries and coffee."
+        },
+        {
+          "time": "03:00 PM - Fashion and Style",
+          "title": "Shopping in Downtown Oran",
+          "description": "Spend the afternoon shopping in downtown Oran, exploring fashion boutiques and stores."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Elegant Restaurant",
+          "description": "Dine at an elegant restaurant, savoring gourmet Algerian cuisine in a sophisticated setting."
+        }
+      ],
+      "day9": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a delicious breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Historical Site",
+          "title": "Mosquée Abdelhamid Ben Badis",
+          "description": "Visit the Mosquée Abdelhamid Ben Badis, a beautiful mosque and significant cultural site."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Historic Café",
+          "description": "Enjoy lunch at a historic café, trying traditional Algerian dishes."
+        },
+        {
+          "time": "03:00 PM - Art and Culture",
+          "title": "Local Art Studios",
+          "description": "Visit local art studios, meeting artists and seeing their work firsthand."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Nile Dinner",
+          "description": "Have a dinner on the Nile, enjoying a meal with a view of the river and the city lights."
+        }
+      ],
+      "day10": [
+        {
+          "time": "09:00 AM - Breakfast",
+          "title": "Hotel Breakfast",
+          "description": "Start your day with a hearty breakfast at your hotel."
+        },
+        {
+          "time": "11:00 AM - Art and History",
+          "title": "Bastion 23",
+          "description": "Explore Bastion 23, a historic fortress now used for cultural events and exhibitions."
+        },
+        {
+          "time": "01:00 PM - Lunch",
+          "title": "Gourmet Restaurant",
+          "description": "Have lunch at a gourmet restaurant, enjoying a mix of Algerian and international dishes."
+        },
+        {
+          "time": "03:00 PM - Souvenir Shopping",
+          "title": "Local Markets",
+          "description": "Spend your afternoon shopping for souvenirs in local markets, finding unique gifts and treasures."
+        },
+        {
+          "time": "07:00 PM - Dinner",
+          "title": "Farewell Dinner",
+          "description": "Enjoy a farewell dinner at a top-rated restaurant, reflecting on your time in Oran and savoring your favorite dishes."
+        }
+      ]
+    }    
+    
 
 
            
